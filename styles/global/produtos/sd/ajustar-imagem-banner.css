@@ -1,0 +1,3 @@
+.slide__image {
+    object-fit: contain !important;
+}

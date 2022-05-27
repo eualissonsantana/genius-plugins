@@ -1,0 +1,14 @@
+.carousel-consortia .card--dark, .list-consortia__list .card--dark {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+.carousel-consortia .card--dark .card__img:before, 
+.list-consortia__list .card--dark .card__img:before {
+    background-color: initial !important;
+}
+
+.carousel-consortia .card--dark .card__title, .card--dark .card__trigger-value,
+.list-consortia__list .card--dark .card__title, .card--dark .card__trigger-value {
+    color: #333 !important;
+}
