@@ -1,0 +1,14 @@
+@media screen and (max-width: 480px){
+    .page__container{
+        background: #000 !important;
+    }
+    
+    .gallery-with-thumbs{
+        margin-top: 0 !important;
+    }
+    
+    .gallery-with-thumbs .section-component__title{
+        color: #fff;
+        padding: 0 1rem;
+    }
+}
