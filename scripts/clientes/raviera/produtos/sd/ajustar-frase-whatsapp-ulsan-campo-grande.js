@@ -1,5 +1,5 @@
 (() => {
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("load", () => {
         const changeWhatsappPhrase = (headerWhatsappItems) => {
             headerWhatsappItems.forEach(whatsappItem => {
                 let whatsappLink = whatsappItem.querySelector("a").getAttribute("href");
