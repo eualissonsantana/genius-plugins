@@ -24,9 +24,9 @@
                     else if(phoneName == "Montes Claros"){
                         phoneLink.setAttribute("href", "https://bit.ly/3zDNu1R");
                     }
-                    // else if(phoneName == "Pará de Minas"){
-                    //     phoneLink.setAttribute("href", "https://bit.ly/3H2ORsy");
-                    // }
+                    else if(phoneName == "Pará de Minas"){
+                        phoneLink.setAttribute("href", "https://bit.ly/395xBWO");
+                    }
                     else{
                         const phoneDataLink = phoneLink.getAttribute("data-link");
                         phoneLink.setAttribute("href", phoneDataLink);

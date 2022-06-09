@@ -68,7 +68,6 @@
             menuItens.forEach(element => {
                 if (element.innerHTML.includes("Novos")) {
                     const dropItens = element.querySelectorAll(".dropdown-menu .card-collapse-deep__title")
-                    console.log(dropItens)
     
                     dropItens.forEach(element => {
                         if (!element.innerHTML.includes("Veículos")) {
