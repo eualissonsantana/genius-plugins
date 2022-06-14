@@ -13,6 +13,8 @@
                     const phoneLink = phone.querySelector("a");
                     const phoneName = phoneLink.getAttribute("data-name");
 
+                    console.log(phoneName);
+
                     phoneLink.setAttribute("target", "_blank");
 
                     if(phoneName == "Bahia"){
