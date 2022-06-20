@@ -38,6 +38,7 @@ Exemplo da estrutura a partir da pasta **scripts**
 │   |       └── pc
 │   |       └── ps
 │   |       └── pg
+│   |       └── pm
 │   |       └── tb
 └── styles
 
@@ -49,6 +50,7 @@ pa - Portal de Assinatura
 pc - Portal de Consórcios
 ps - Portal de Seminovos
 pg - Portal de Grupo
+pm - Portal de Marcas
 ts - Turbo Store
 ```
 
