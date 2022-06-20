@@ -13,25 +13,10 @@
                     const phoneLink = phone.querySelector("a");
                     const phoneName = phoneLink.getAttribute("data-name");
 
-                    console.log(phoneName);
-
                     phoneLink.setAttribute("target", "_blank");
 
-                    if(phoneName == "Bahia"){
+                    if(phoneName == "Atendimento Online"){
                         phoneLink.setAttribute("href", "https://bit.ly/3O0NT20");
-                    }
-                    else if(phoneName == "Divinópolis"){
-                        phoneLink.setAttribute("href", "https://bit.ly/3Q8xY3N");
-                    }
-                    else if(phoneName == "Montes Claros"){
-                        phoneLink.setAttribute("href", "https://bit.ly/3zDNu1R");
-                    }
-                    else if(phoneName == "Pará de Minas"){
-                        phoneLink.setAttribute("href", "https://bit.ly/395xBWO");
-                    }
-                    else{
-                        const phoneDataLink = phoneLink.getAttribute("data-link");
-                        phoneLink.setAttribute("href", phoneDataLink);
                     }
                 });
             }
