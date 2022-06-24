@@ -28,15 +28,10 @@
                 const content = document.createElement("div");
                 content.classList.add("container");
 
-                const topImg = document.createElement("img");
-                topImg.classList.add("img-fluid");
-                topImg.src = `https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/topo-kinto.jpg`;
-                topImg.alt = `Topo Kinto`;
-
                 const kintoApp = document.createElement("section");
                 kintoApp.classList.add("kinto-app");
                 kintoApp.innerHTML = `
-                    <h4>APLICATIVO KINTO</h4>
+                    <h4 class="title">APLICATIVO KINTO</h4>
                     <p>O Aplicativo Kinto foi criado para atender a todas as suas necessidades. Nosso objetivo é  possibilitar a melhor experiência do consumidor com os nossos produtos.
                     Fazemos de tudo para criar uma maneira diferente e personalizada, não só na hora da compra do veículo, mas também em toda a sua jornada com o mesmo. Confira abaixo tudo que o app pode fazer por você e com você.</p>
                 `;
@@ -44,7 +39,7 @@
                 const howWorks = document.createElement("section");
                 howWorks.classList.add("how-works");
                 howWorks.innerHTML = `
-                    <h4>COMO FUNCIONA?</h4>
+                    <h4 class="title">COMO FUNCIONA?</h4>
 
                     <div class="card-deck">
                         <div class="card">
@@ -105,26 +100,26 @@
                 const differentials = document.createElement("section");
                 differentials.classList.add("differentials");
                 differentials.innerHTML = `
-                    <h4>DIFERENCIAIS</h4>
+                    <h4 class="title">DIFERENCIAIS</h4>
 
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div>
-                                <h6>FLEXIBILIDADE</h6>
+                                <h6>Flexibilidade</h6>
                                 <p>
                                     Reserve o seu veículo por hora ou por dia.
                                 </p>
                             </div>
 
                             <div>
-                                <h6>VARIEDADE</h6>
+                                <h6>Variedade</h6>
                                 <p>
                                     Escolha o Toyota que melhor atenda às suas necessidades
                                 </p>
                             </div>
 
                             <div>
-                                <h6>LIBERDADE</h6>
+                                <h6>Liberdade</h6>
                                 <p>
                                     Você tem a opção de retirar o veículo em uma estação Toyota Mobility e devolver em outra*
                                 </p>
@@ -135,19 +130,19 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div>
-                                <h6>ACESSIBILIDADE</h6>
+                                <h6>Acessibilidade</h6>
                                 <p>
                                     Com o Toyota Mobility Services você pode devolver o veículo em qualquer ponto de distribuição.
                                 </p>
                             </div>
                             <div>
-                                <h6>QUALIDADE TOYOTA</h6>
+                                <h6>Qualidade Toyota</h6>
                                 <p>
                                     O Toyota Mobility Services possui toda a qualidade, confiança e transparência que só a Toyota pode oferecer.
                                 </p>
                             </div>
                             <div>
-                                <h6>TECNOLOGIA</h6>
+                                <h6>Tecnologia</h6>
                                 <p>
                                     Uma linha de produtos exclusivas e tecnológicas. Incluindo o novo Corolla, o primeiro híbrido flex do mundo
                                 </p>
@@ -158,9 +153,71 @@
 
                 const betterOptionForYou = document.createElement("section");
                 betterOptionForYou.classList.add("better-option-for-you");
-                betterOptionForYou.innerHTML = ``;
+                betterOptionForYou.innerHTML = `
+                    <h4 class="title">ESCOLHA A MELHOR OPÇÃO PARA VOCÊ</h4>
 
-                content.appendChild(topImg);
+                    <div class="row" style="justify-content: center;">
+                        <div class="col-lg-4 col-md-4 col-sm-12 pb-3">
+                            <div class="card">
+                                <img 
+                                    src="https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/kinto-luxo.jpg" 
+                                    class="img-fluid"
+                                    alt="Kinto Luxo"
+                                />
+                                <h5>Luxo</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 pb-3">
+                            <div class="card">
+                                <img 
+                                    src="https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/kinto-mobilidade.jpg" 
+                                    class="img-fluid"
+                                    alt="Kinto Mobilidade"
+                                />
+                                <h5>Mobilidade</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 pb-3">
+                            <div class="card">
+                                <img 
+                                    src="https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/kinto-aventura.jpg" 
+                                    class="img-fluid"
+                                    alt="Kinto Aventura"
+                                />
+                                <h5>Aventura e utilidade</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 pb-3">
+                            <div class="card">
+                                <img 
+                                    src="https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/kinto-urbano.jpg" 
+                                    class="img-fluid"
+                                    alt="Kinto Urbano"
+                                />
+                                <h5>Urbano</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 pb-3">
+                            <div class="card">
+                                <img 
+                                    src="https://legado.autoforce.com.br/plugins/images/clientes/stefani/produtos/sd/kinto-tecnologia.jpg" 
+                                    class="img-fluid"
+                                    alt="Kinto Tecnologia"
+                                />
+                                <h5>Tecnologia</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a 
+                        href="https://kintomobility.com.br/share"
+                        target="_blank"
+                        class="btn button button--primary button--large"
+                    >
+                        SAIBA MAIS 
+                    </a>
+                `;
+
                 content.appendChild(kintoApp);
                 content.appendChild(howWorks);
                 content.appendChild(differentials);
@@ -168,30 +225,35 @@
                 contentStaticPage.after(content);
 
                 addStyle(`
-                    .kinto-app{
-                        padding: 2.5rem 0;
-                    }
-
                     .kinto-app,
-                    .how-works{
+                    .how-works,
+                    .differentials,
+                    .better-option-for-you{
                         text-align: center;
                         color: #000;
-                    }
-
-                    .differentials{
-                        color: #000;
+                        padding-bottom: 2.5rem;
                     }
 
                     .kinto-app h4,
                     .how-works h4,
-                    .differentials h4{
+                    .differentials h4,
+                    .better-option-for-you h4{
                         text-align: center;
                         font-weight: bold;
                         margin-bottom: 0.6rem;
                     }
 
-                    .how-works{
-                        padding-bottom: 2.5rem;
+                    .kinto-app .title::after,
+                    .how-works .title::after,
+                    .differentials .title::after,
+                    .better-option-for-you .title::after{
+                        content: '';
+                        display: block;
+                        margin: 0 auto;
+                        margin-top: 0.3rem;
+                        background: #DE2326;
+                        width: 5rem;
+                        height: .2rem;
                     }
 
                     .differentials h6{
@@ -199,10 +261,44 @@
                         margin-bottom: 0;
                     }
 
+                    .better-option-for-you h5{
+                        padding: .8rem 0;
+                    }
+
+                    .kinto-app > h4,
                     .how-works > h4,
-                    .differentials > h4
+                    .differentials > h4,
+                    .better-option-for-you > h4
                     {
                         margin-bottom: 1.5rem;
+                    }
+
+                    .better-option-for-you a{
+                        margin-bottom: 1rem;
+                    }
+
+                    
+
+                    @media screen and (min-width: 992px) {
+                        .better-option-for-you a{
+                            width: 11rem;
+                        }
+
+                        .content__form-with-banner{
+                            margin-top: 0 !important;
+                        }
+
+                        .content__text--with-bait{
+                            flex: inherit !important;
+                        }
+    
+                        .content__form{
+                            flex: inherit !important;
+                        }
+
+                        .content__container{
+                            justify-content: center !important;
+                        }
                     }
                 `);
             }
