@@ -24,61 +24,61 @@
         const vehicles = [
             {
                 name: "Fit",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/fit.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/fit.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/fit.pdf",
                 alt: "Fit"
             },
             {
                 name: "WR-V",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/wr-v.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/wr-v.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/wr-v.pdf",
                 alt: "WR-V"
             },
             {
                 name: "HR-V",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/hr-v.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/hr-v.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/hr-v.pdf",
                 alt: "HR-V"
             },
             {
                 name: "HR-V Touring",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/hr-v-touring.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/hr-v-touring.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/hr-v-touring.pdf",
                 alt: "HR-V Touring"
             },
             {
                 name: "CR-V",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/cr-v.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/cr-v.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/cr-v.pdf",
                 alt: "CR-V"
             },
             {
                 name: "City",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/city.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/city.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/city.pdf",
                 alt: "City"
             },
             {
                 name: "Civic",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/civic.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/civic.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/civic.pdf",
                 alt: "Civic"
             },
             {
                 name: "Civic Touring",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/civic-touring.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/civic-touring.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/civic-touring.pdf",
                 alt: "Civic Touring"
             },
             {
                 name: "Civic SI",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/civic-si.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/civic-si.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/civic-si.pdf",
                 alt: "Civic SI"
             },
             {
                 name: "Accord",
-                image: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/image/revisao/accord.jpg",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/shizen/produtos/sd/revisao/accord.jpg",
                 pdf: "https://legado.autoforce.com.br/plugins/files/clientes/shizen/produtos/sd/pdf/revisao/accord.pdf",
                 alt: "Accord"
             }
@@ -124,7 +124,7 @@
                                 href="${vehicle.pdf}"
                                 target="_blank"
                             >  
-                                BAIXAR
+                                VISUALIZAR
                             </a>
                         </div>
                     </div>
