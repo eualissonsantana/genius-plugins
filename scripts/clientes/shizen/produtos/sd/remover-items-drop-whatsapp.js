@@ -6,7 +6,7 @@
         whatsappItems.forEach(whatsappItem => {
             const whatsappItemText = whatsappItem.querySelector("a strong").innerHTML;
     
-            if(!(whatsappItemText.includes("Atendimento"))){
+            if(whatsappItemText.includes("teste")){
                 whatsappItem.remove();
             }
         });
