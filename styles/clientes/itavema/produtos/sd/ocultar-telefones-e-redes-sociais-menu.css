@@ -1,0 +1,17 @@
+.header-desktop .header__navbar{
+    justify-content: flex-start;
+}
+
+.header-desktop .header__navbar .header__phones,
+.header-desktop .header__navbar .header__navbar-title,
+.header-desktop .header__navbar .header__networks{
+    display: none !important;
+}
+
+.header-mobile .header-mobile__row{
+    padding: 0.3rem 0;
+}
+
+.header-mobile .header-mobile__row .header-mobile__buttons{
+    display: none !important;
+}
