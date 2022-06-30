@@ -103,7 +103,24 @@
                                 element.classList.add("accord-menu-img", "img-menu")
                             }
 
-                            element.innerHTML = ``;
+                            if (element.innerHTML.includes("Civic") && location.hostname.includes("shizen")) {
+                                element.innerHTML = `
+                                    Aguarde novidades
+                                `;
+
+                                element.style = `
+                                    font-size: 0.7rem;
+                                    width: 100%;
+                                    padding-top: 1rem;
+                                    opacity: .5;
+                                    pointer-events: none;
+                                `;
+
+                                element.setAttribute("href", "javascript:void(0)");
+                            } 
+                            else{
+                                element.innerHTML = ``;
+                            }
                         }
                     });
                 }
