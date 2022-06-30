@@ -18,12 +18,14 @@
                 }
             });
         };
-    
-        hideField(fieldsetLegends);
-    
-        btnSubmit.addEventListener("click", function(){
+        
+        if(fieldsetLegends && btnSubmit){
             hideField(fieldsetLegends);
-            this.click();
-        });
+
+            btnSubmit.addEventListener("click", function(){
+                hideField(fieldsetLegends);
+                this.click();
+            });
+        }
     });
 })();
