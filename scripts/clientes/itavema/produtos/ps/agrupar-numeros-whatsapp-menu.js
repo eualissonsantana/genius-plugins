@@ -144,9 +144,8 @@
 
                     let headerCardWhatsappLink = document.createElement("a");
                     headerCardWhatsappLink.setAttribute("target", "_blank");
-                    headerCardWhatsappLink.setAttribute("href", `${unit.link}`);
                     headerCardWhatsappLink.setAttribute("class", "header-mobile__whatsapp-link");
-                    headerCardWhatsappLink.setAttribute("target", "_blank");
+                    headerCardWhatsappLink.setAttribute("href", `${unit.data_link}`);
                     headerCardWhatsappLink.setAttribute("data-name", `${unit.data_name}`);
                     headerCardWhatsappLink.setAttribute("data-number", `${unit.data_number}`);
                     headerCardWhatsappLink.setAttribute("data-product", `${unit.data_product}`);
@@ -174,55 +173,6 @@
 
                     headerCardWhatsappItem.appendChild(headerCardWhatsappLink);
                     dropItemContentList.appendChild(headerCardWhatsappItem);
-
-                    headerCardWhatsappLink.addEventListener("click", (event) => {
-                        event.preventDefault();
-
-                        const target = event.target.closest(".header-mobile__whatsapp-link");
-
-                        const data = {
-                            name: target.getAttribute("data-name"),
-                            number: target.getAttribute("data-number"),
-                            product: target.getAttribute("data-product"),
-                            channel: target.getAttribute("data-channel"),
-                            category: target.getAttribute("data-category"),
-                            brand: target.getAttribute("data-brand"),
-                            link: target.getAttribute("data-link"),
-                            unit: target.getAttribute("data-unit"),
-                            phones: target.getAttribute("data-phones"),
-                            units: target.getAttribute("data-units"),
-                            show_cpf: target.getAttribute("data-show-cpf"),
-                            show_units: target.getAttribute("data-show-units"),
-                            versions: target.getAttribute("data-versions"),
-                            show_location_fields: target.getAttribute("data-show-location-fields")
-                        };
-
-                        const { toBool } = window.helpers;
-
-                        var element = document.querySelector('.header-conversion-form-whatsapp-modal');
-                        element.innerHTML = '';
-
-                        render(
-                            h(window.WhatsAppFormModal, {
-                                modalId: 'header-conversion-form-whatsapp-modal',
-                                open: true,
-                                unit: data.unit,
-                                units: data.units ? JSON.parse(data.units) : [],
-                                product: data.product,
-                                channel: data.channel,
-                                category: data.category,
-                                brand: data.brand,
-                                link: data.link,
-                                whatsAppResponder: data.whatsAppResponder,
-                                showUnits: JSON.parse(data.show_units),
-                                showCpf: !!JSON.parse(data.show_cpf),
-                                phones: JSON.parse(data.phones),
-                                versions: JSON.parse(data.versions),
-                                showLocationFields: toBool(data.show_location_fields)
-                            }),
-                            element
-                        );
-                    });
                 });
 
                 dropItemContent.appendChild(dropItemContentList);
