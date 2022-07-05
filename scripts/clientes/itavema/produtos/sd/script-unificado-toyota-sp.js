@@ -1450,17 +1450,13 @@
             // Header
             const headerWhatsappItemsDesktop = document.querySelectorAll(".header__navbar-item .header__phones-container #header-card-whatsapp #wpp-content-0 .list .header__card-whatsapp-item");
             const currentHeaderWhatsappButtonDesktop = document.querySelector(".header__navbar-item .header__phones-container .button--whatsapp");
-            const headerWhatsappCardCollapseDesktop = document.querySelector(".header__navbar-item .header__phones-container #header-card-whatsapp .card-collapse__header");
-    
     
             const headerWhatsappItemsMobile = document.querySelectorAll(".header-mobile__buttons #header-card-whatsapp-mobile #wpp-content-mobile-0 .list .header__card-whatsapp-item");
             const currentHeaderWhatsappButtonMobile = document.querySelector(".header-mobile__buttons > div button.button-icon--whatsapp");
-            const headerWhatsappCardCollapseMobile = document.querySelector(".header-mobile__buttons #header-card-whatsapp-mobile .card-collapse__header");
-    
     
             let headerWhatsappDataLink;
     
-            const changeWhatsappHeader = (headerWhatsappItems, currentHeaderWhatsappButton, headerWhatsappCardCollapse) => {
+            const changeWhatsappHeader = (headerWhatsappItems, currentHeaderWhatsappButton) => {
                 if(!currentHeaderWhatsappButton){
                     return;
                 }
@@ -1490,12 +1486,29 @@
                 }
     
                 currentHeaderWhatsappButton.addEventListener("click", () => {
-                    headerWhatsappCardCollapse.click();
+                    const cardWhatsApp = document.querySelector("#header-card-whatsapp div[data-parent='#header-card-whatsapp']");
+                    const cardWhatsAppMobile = document.querySelector("#header-card-whatsapp-mobile div[data-parent='#header-card-whatsapp-mobile']");
+                    const cardCollapse = document.querySelector("#header-card-whatsapp #wpp-content-0")
+                    const cardCollapseMobile = document.querySelector("#header-card-whatsapp-mobile #wpp-content-mobile-0")
+
+                    if(cardWhatsApp && cardWhatsAppMobile && cardCollapse && cardCollapseMobile){
+                        cardWhatsAppMobile.classList.remove("collapsed")
+                        cardWhatsApp.classList.remove("collapsed")
+                        
+                        cardWhatsAppMobile.setAttribute("aria-expanded", "true")
+                        cardWhatsAppMobile.setAttribute("aria-expanded", "true")
+
+                        cardCollapse.classList.add("show")
+                        cardCollapseMobile.classList.add("show")
+
+                        cardCollapse.setAttribute("aria-expanded", "true")
+                        cardCollapseMobile.setAttribute("aria-expanded", "true")
+                    }
                 });
             };
     
-            changeWhatsappHeader(headerWhatsappItemsDesktop, currentHeaderWhatsappButtonDesktop, headerWhatsappCardCollapseDesktop);
-            changeWhatsappHeader(headerWhatsappItemsMobile, currentHeaderWhatsappButtonMobile, headerWhatsappCardCollapseMobile);
+            changeWhatsappHeader(headerWhatsappItemsDesktop, currentHeaderWhatsappButtonDesktop);
+            changeWhatsappHeader(headerWhatsappItemsMobile, currentHeaderWhatsappButtonMobile);
     
             // Novos
             const newVehiclesButtonWhatsapp = document.querySelector(".vehicles-new .vehicles-new__ctas .vehicles-new__button-whatsapp");

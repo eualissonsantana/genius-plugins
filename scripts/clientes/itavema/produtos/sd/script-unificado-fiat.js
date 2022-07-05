@@ -1,7 +1,6 @@
 (() => {
     // 04/07/2022 | Remove form de whatsapp nas CTAs de whatsapp
-    // Inserido por: João Carlos
-    // Solicitado por: Mayara Machado
+    // João Carlos
     function removeFormWhatsapp() {
         window.addEventListener("DOMContentLoaded", () => {
             // Header
@@ -87,9 +86,35 @@
         });
     }
 
-    // 01/06/2022 | Adicionar redirecionamento das páginas de ofertas para páginas de agradecimento
-    // Inserido por: Alisson Santana
+    function alteraRedirectAgendamentoRevisao() {
+        window.addEventListener("DOMContentLoaded", () => {
+            const isThisPage = ({ urlPiece }) => {
+                const fullURL = window.location.href
+                const result = fullURL.includes(urlPiece)
+        
+                return result
+            }
+    
+            if(isThisPage({ urlPiece: "/servicos" })){
+                let currentBtnSchedule = document.querySelector(".showcase-services__panel .showcase-services__panel-btn-schedule");
+                
+                if(currentBtnSchedule){
+                    let newBtnSchedule = document.createElement("a");
+                    newBtnSchedule.setAttribute("class", "btn button button--large button--primary showcase-services__panel-btn-schedule");
+                    newBtnSchedule.innerText = "Agendar Revisão";
+                    newBtnSchedule.href = "https://itavema.com.br/fiat/empresa/agendamento-de-servico";
+    
+                    currentBtnSchedule.after(newBtnSchedule);
+                    currentBtnSchedule.remove();
+                }
+            }
+        });
+    }
+
+    // 17/06/2022 | Adicionar redirecionamento das páginas de ofertas para páginas de agradecimento
+    // Alisson Santana
     function adicionaRedirectPaginaAgradecimento() {
+    
         const itemsMenuToRemove = document.querySelectorAll(".nav--accordion-mobile .nav-simple__item")
         itemsMenuToRemove.forEach(itemMenu => {
             if(itemMenu.innerHTML.includes("Página agradecimento")) {
@@ -131,22 +156,61 @@
         }
     }
 
-    // 27/06/22 | OCULTANDO MENU DE Agende Test Drive
-    // INSERIDO POR: Bruno
-    // SOLICITADO POR: Rafael
-    function ocultarMenuAgendeTestDrive(){
-        const items = document.querySelectorAll(".nav-link.nav-simple__link");
-        
-        if(items){
-            items.forEach(element => {
-                if(element.innerHTML.includes("Agende Test Drive")){
-                    element.parentNode.remove(element.parentNode);
-                }
-            });
-        }    
+    // Oculta carrossel de Ofertas Únicas 0Km da Index
+    // Bruno
+    function ocultaCarrosselOfertasUnicas() {
+        if(window.location.pathname == '/' || window.location.pathname == '/fiat'){
+            let carouselUsedModels = document.querySelector(".section-component.carousel-offers-used-models");
+    
+            if(carouselUsedModels){
+                carouselUsedModels.remove();
+            }
+        }
     }
 
-    removeFormWhatsapp();
-    adicionaRedirectPaginaAgradecimento();
-    ocultarMenuAgendeTestDrive();
-})();
+    // Oculta carroseu
+    function ocultaOfertasUnicasMenu() {
+        Array.prototype.slice.call(document.querySelectorAll('.nav-link.nav-simple__link'))
+        .filter(function (el) {
+            return el.textContent === ' Ofertas Únicas '
+        })[0].parentNode.classList.add('d-none')
+    }
+
+    function ocultaOfertas0km() {
+        let carouselUsedModels = document.querySelector(".section-component.carousel-offers-used-models");
+
+        if(carouselUsedModels){
+            carouselUsedModels.remove();
+        }
+    }
+
+    // SCRIPT PARA RENOMEAR MENU PRINCIPAL - ALTERANDO DE OFERTAS PARA NOSSO ESTOQUE
+    function alteraOfertasParaNossoEstoque() {
+        Array.prototype.slice.call(document.querySelectorAll('.nav .nav-link'))
+        .filter(function (el) {
+            return el.textContent === ' Serviços '
+        })[0].innerText = ' Pós Venda ';
+    }
+
+    function alteraOrdemMenu() {
+        const navItems = document.querySelectorAll(".nav-simple .nav .nav-item");
+
+        if(navItems.length > 0){
+            const insertAfter = (newNode, existingNode) => {
+                existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+            }
+    
+            insertAfter(navItems[7], navItems[9]);
+            insertAfter(navItems[6], navItems[7]);
+        }
+    }
+
+    removeFormWhatsapp()
+    alteraRedirectAgendamentoRevisao()
+    adicionaRedirectPaginaAgradecimento()
+    ocultaCarrosselOfertasUnicas()
+    ocultaOfertasUnicasMenu()
+    ocultaOfertas0km()
+    alteraOfertasParaNossoEstoque()
+    alteraOrdemMenu()
+})()
