@@ -1,0 +1,9 @@
+@media (min-width: 768px) and (max-width: 1920px){
+    .filter-used-models .section-component__header--fill {
+        padding: 15px 0px 40px !important;
+    }
+
+    .filter-used-models .section-component__header--fill{
+        min-height: 220px !important;
+    }
+}
