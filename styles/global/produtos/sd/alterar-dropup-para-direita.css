@@ -1,0 +1,8 @@
+.dropup .dropdown-menu {
+    left: -250px !important;
+}
+
+.dropup {
+    left: initial !important;
+    right: 15px;
+}

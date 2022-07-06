@@ -1,0 +1,3 @@
+.form-conversion__body fieldset:nth-child(2), .conversion-form__data-permissions-field {
+    display: none !important;
+}

@@ -1,0 +1,28 @@
+.showcase-simple .form-conversion__footer, .conversion-step__privacy-policy {
+    font-size: 0.65rem !important;
+    line-height: 0.8rem;
+}
+
+.showcase-simple .conversion-step__header-title {
+    font-size: 0.9rem !important;
+}
+
+.showcase-simple .conversion-step {
+    top: 0 !important;
+}
+
+.showcase-simple .chronometer-box .icon-clock, .chronometer-box__main-text {
+    font-size: .70rem !important;
+}
+
+.showcase-simple .conversion-form__data-permissions-field .custom-check>label {
+    font-size: 0.6rem !important;
+}
+
+.showcase-simple .conversion-step__header {
+    padding: 10px 5px !important;
+}
+
+.conversion-step .chronometer-box {
+    padding-top: 0 !important;
+}

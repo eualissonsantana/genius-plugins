@@ -1,0 +1,456 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'MBCorpoSTitle';
+  src: url('https://desenvolvimentobucket.s3-us-west-2.amazonaws.com/fonts/MBCorpoSTitle/MBCorpoSTitle-Regular-Web.ttf');
+}
+
+@font-face {
+  font-family: 'DaimlerCAC';
+  src: url('https://desenvolvimentobucket.s3-us-west-2.amazonaws.com/fonts/DaimlerCAC/DaimlerCAC-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'MBCorpoSText';
+  src: url('https://desenvolvimentobucket.s3-us-west-2.amazonaws.com/fonts/MBCorpoSTitle/MBCorpoSText-Regular-Web.ttf');
+}
+
+:root {
+  --font-family-base: 'MBCorpoSText', Ariel, Helvetica, sans-serif;
+  --font-family-secondary: 'DaimlerCAC', 'MBCorpoSTitle', sans-serif;
+}
+
+.used-models .section-component__header--fill,
+.showcase-simple+.vehicles-new,
+.button {
+  border-radius: 0;
+}
+
+.header-mobile__logo-right {
+  object-fit: cover;
+  height: 40px;
+  margin:  0;
+}
+
+.header__logo-right {
+  display: none;
+}
+
+.page__container,
+.header,
+.nav-simple,
+.page {
+  background-color: black;
+}
+
+.header-mobile__logo-right,
+.header__link-logo-right {
+  /* display: none; */
+}
+
+.header {
+  border-color: white; 
+}
+
+.vehicle-details__version-carousel-next {
+  background-image: linear-gradient(to right, rgba(248,249,249,0), #0c0c0c);
+}
+
+.vehicle-details__version-carousel-prev {
+  background-image: linear-gradient(to left, rgba(248,249,249,0), #0c0c0c);
+}
+
+.used-models {
+  margin-top: 0;
+}
+
+.section-component.vehicles-new,
+.carousel-used-models-featured,
+.list-services,
+.showcase-services__panel,
+.suggestions_consortia,
+.related-offers-products,
+.latest-offers,
+.vehicles-new {
+  background: #0c0c0c;
+}
+
+.footer,
+.vehicle-details,
+.page--accessories .page__container,
+.page--category-direct-sale .page__container,
+.page--direct-sales .page__container,
+.page--home .page__container,
+.page--offers .page__container,
+.page--parts .page__container,
+.page--services .page__container,
+.page--used-models .page__container {
+  background: black;
+}
+
+.simple-filter__item,
+.search-filter-simple__item,
+.search-term__input,
+.footer-units,
+.section-component__header--fill,
+.header__networks-list,
+.card {
+  background-color: #1b1b1b;
+}
+
+.header__networks-list {
+  display: none;
+}
+
+.card--simple,
+.card--full-width-mobile {
+  background-color: transparent;
+}
+
+.footer-units__contents-block:not(:last-child)
+
+.card.card--dark {
+  background-color: #c1c1c1 !important;
+}
+
+.card.card--dark .card__separator {
+  border-color: #4a4a4a !important;
+}
+
+.card--dark .card__img::before {
+  background-color: #3a3a3a;
+}
+
+.card--dark .card__title,
+.card--dark .card__trigger-value {
+  color: white;
+}
+
+.carousel__scrollbar .swiper-scrollbar-drag {
+  background-color: darkgrey;
+}
+
+.institutional {
+  background-color: darkgray;
+}
+
+.used-vehicles__seal--premium {
+  background-color: white;
+}
+
+.page--new-vehicle .vehicle-details__separator {
+  margin: 0;
+}
+
+.page--new-vehicle .conversion-form__control-label,
+.page--new-vehicle .conversion-form .custom-check > label,
+.page--new-vehicle label {
+  color:  #333;
+}
+
+.page--new-vehicle .custom-check__check {
+  border-color: #333;
+}
+
+.page--new-vehicle .conversion-form,
+.page--new-vehicle .conversion-form__photo {
+  background: white;
+}
+
+.page--new-vehicle .img-fluid:not(.header__logo),
+.page--new-vehicle .img-thumbnail:not(.header__logo) {
+  max-height: unset;
+}
+
+.vehicle-details__version-carousel .card__header,
+.carousel-vehicles-new .card__header,
+.list-vehicles-new__list .card__img {
+  padding-top: 20px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+
+.parts-showcase__category,
+.accessories-showcase__category,
+.showcase-services__panel-title,
+.showcase-services__header,
+.list-parts__link,
+.showcase-consortium__title,
+.showcase-offer__title,
+.showcase__title,
+.institutional__title,
+.vehicle-details__version-carousel .card__title,
+.card-consortia .card__title,
+.list-direct-sales-vehicles__list .card__title,
+.list-offers__list .card__title,
+.list-vehicles-new__list .card__title,
+.carousel-offers-vehicles-new__card .card__title,
+.carousel-direct-sales__card .card__title,
+.vehicles-new .card__title,
+.section-component__title {
+  font-weight: normal;
+  font-family: var(--font-family-secondary);
+}
+
+.section-component__title.section-component__title--service,
+.section-component__title.accessories-showcase__title,
+.section-component__title.parts-showcase__title,
+.section-component__title.used-vehicles-showcase__title {
+  font-weight: bold;
+  font-family: var(--font-family-base);
+  color:  white;
+}
+
+.breadcrumb,
+.go-back-link {
+  font-family: var(--font-family-base);
+}
+
+.vehicle-details__version-carousel .card__title,
+.list-vehicles-new__list .card__title,
+.list-offers__list .card__title,
+.list-direct-sales-vehicles__list .card__title,
+.card-consortia .card__title,
+.carousel-offers-vehicles-new__card .card__title,
+.carousel-direct-sales__card .card__title,
+.vehicles-new .card__title {
+  font-size: 18px;
+  line-height: 1.15em;
+}
+
+.section-component__subtitle {
+  font-size: 18px;
+}
+
+.accessories-showcase,
+.content--static-page,
+.parts-showcase,
+.showcase,
+.footer,
+.showcase-offer,
+.section-component {
+  border-top: 1px solid #2f2f2f;
+}
+
+.accessories-showcase__hr,
+.used-vehicles-showcase__hr,
+.parts-showcase__hr {
+  background-color: #2f2f2f;
+}
+
+.footer-units__contents-block:not(:last-child) {
+  border-color: #2f2f2f;
+}
+
+.time-missing-card {
+  background-color: white;
+  color:  black;
+}
+
+.showcase-consortium__model-image-background::before,
+.showcase-offer__model-image-background::before {
+  background: -webkit-linear-gradient(black, #292929 50%, black 0%, black);
+  background: -o-linear-gradient(black, #292929 50%, black 0%, black);
+  background: linear-gradient(black, #292929 50%, black 0%, black);
+}
+
+.showcase-consortium__model-image-background::after,
+.showcase-offer__model-image-background::after {
+  background: -webkit-linear-gradient(rgba(68,68,68,0), rgba(68,68,68,0) 50%, #2d2d2d 0%, black);
+  background: -o-linear-gradient(rgba(68,68,68,0), rgba(68,68,68,0) 50%, #2d2d2d 0%, black);
+  background: linear-gradient(rgba(68,68,68,0), rgba(68,68,68,0) 50%, #2d2d2d 0%, black);
+}
+
+.img-fluid,
+.img-thumbnail {
+  max-height: 68px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-units,
+  .footer-units__header {
+    background-color: transparent !important;
+  }
+
+  .header-mobile__logo {
+    flex-basis:  unset;
+  }
+
+  .header-mobile__logo>img {
+    max-height: 60px;
+  }
+}
+
+.header-mobile__buttons,
+.header__phones-container {
+  /* display: none; */
+}
+
+.header {
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 200px;
+    height: auto;
+    object-fit: contain; 
+  }
+
+  .header__navbar {
+    justify-content: flex-start;
+  }
+  
+  .header__navbar > a {
+    flex: 0 0 200px;
+  }
+
+  .header__navbar-item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .nav-simple__item {
+    padding: 0 10px;
+    position: relative;
+    border-right: 1px solid white;
+  }
+
+  li.nav-item.nav-simple__item:last-child {
+    border: none;
+  }
+
+  .header__navbar-item:not(.header__networks) > *:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .nav-simple {
+    padding-bottom: 30px;
+  }
+
+  .nav-simple-sub.dropdown-menu {
+    margin-top: 28px;
+  }
+
+  .nav-simple__item::after {
+    /* display: none; */
+  }
+
+  .list--border-bottom {
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-simple__item .nav-simple__link {
+    text-transform: initial;
+  }
+
+  .card-collapse-deep .list--border-bottom>li {
+    border-color: hsla(0,0%,100%,.05);
+    background: linear-gradient(to bottom, dimgrey, transparent);
+  }
+}
+
+.section-component.vehicles-new,
+.carousel-used-models-featured,
+.list-services,
+.showcase-services__panel,
+.suggestions_consortia,
+.related-offers-products,
+.latest-offers,
+.vehicles-new,
+.page__container,
+.header,
+.nav-simple,
+.page {
+  background-color: #121212 !important;
+}
+
+.page__container {
+  max-width: 1200px;
+}
+
+.showcase-simple .conversion-step {
+  right: 100px;
+}
+
+#block-mb-custom h3
+
+.vehicle-details,
+.page--accessories .page__container,
+.page--category-direct-sale .page__container,
+.page--direct-sales .page__container,
+.page--home .page__container,
+.page--offers .page__container,
+.page--parts .page__container,
+.page--services .page__container,
+.page--used-models .page__container {
+  background: #121212;
+}
+
+.vehicles-new__carousel-next {
+  background-image: linear-gradient(to right, rgba(255,255,255,0), #121212);
+}
+
+.vehicles-new__carousel-prev {
+  background-image: linear-gradient(to left, rgba(255,255,255,0), #121212);
+}
+
+.button--carousel-vehicles-new-main {
+  background: hsl(var(--primary-hue),var(--primary-sat),var(--primary-light));
+  color:  black;
+}
+
+.vehicle-details__version-carousel .card__header,
+.carousel-vehicles-new .card__header,
+.list-vehicles-new__list .card__img {
+  background-image: linear-gradient(to bottom, #2f2f2f, transparent);
+  background-color: #121212;
+}
+
+#block-mb-custom h3 {
+  font-family: var(--font-family-secondary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 20px;
+}
+
+
+#block-mb-custom h3 .icon {
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+#block-mb-custom .content-custom {
+  list-style: none;
+  padding: 0;
+}
+
+#block-mb-custom a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#block-mb-custom p {
+  font-size: 14px;
+}
+
+#block-mb-custom a .icon {
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+footer.footer {
+  background-color: #2f2f2f;
+}
+
+.carousel__item {
+  padding: 0 5px;
+}
+
+.nav-simple__link:hover {
+  color: #00B3FA !important;
+}

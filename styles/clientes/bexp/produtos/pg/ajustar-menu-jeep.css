@@ -1,0 +1,14 @@
+
+
+@media screen and (max-width: 768px) {
+    #content .container-fluid .title-filter form .form-group>label[data-behavior=focus].show {
+        top: -14px !important;
+    }
+
+    #showcase header .nav-wrapper-dinamic.open .nav-wrapper-menu .navbar-collapse .navbar-nav li.dropdown.open .dropdown-menu .dropdown-submenu>.dropdown-submenu-title~li {
+        display: block !important;
+        visibility: visible !important;
+        background: initial !important;
+        border: none !important;
+    }
+}

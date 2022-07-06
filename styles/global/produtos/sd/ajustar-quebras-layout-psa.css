@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+    .header .header__logos .header__brand-logo {
+        max-width: 5rem !important;
+    }
+}
+
+.new-citroen-card .new-citroen-card__title {
+    font-size: 1.1rem !important;
+}
+
+.new-citroen-card {
+    align-items: center !important;
+}
+
+.list-services__item .card {
+    justify-content: space-between !important;
+    min-height: 100%;
+}
+
+.page--page .breadcrumb .breadcrumb__item, .page--page .breadcrumb .breadcrumb__item a {
+    color: #fff !important;
+}
+
+.page--page .breadcrumb {
+    margin-top: initial !important;
+}

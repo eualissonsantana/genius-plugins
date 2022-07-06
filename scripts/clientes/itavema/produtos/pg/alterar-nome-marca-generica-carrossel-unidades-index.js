@@ -43,12 +43,14 @@
                 changeNames()
             }
         });
-    
-        // Setando as alterações que o observer deve assistir
-        observer.observe(itemSelected, {
-            childList: true,
-            subtree: true
-        });
+        
+        if(itemSelected) {
+            // Setando as alterações que o observer deve assistir
+            observer.observe(itemSelected, {
+                childList: true,
+                subtree: true
+            });
+        }
     });
 })()
 

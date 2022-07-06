@@ -130,6 +130,18 @@
 
         #adaptacao .bg-vermelho {
             background-color: #E3233C;
+            border: #E3233C;
+        }
+
+        #adaptacao .btn-vermelho {
+            background-color: #E3233C;
+            border: #E3233C;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #adaptacao .bg-vinho {
+            background-color: #A21942
         }
 
         #adaptacao .bg-verde {
@@ -154,7 +166,7 @@
         }
 
         #adaptacao .ods-card .conteudo {
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         #adaptacao .ods-card img {
@@ -165,9 +177,13 @@
             font-weight: bold;
         }
 
+        #adaptacao .cards .bg-vinho .conteudo  p {
+            margin: -3px;
+        }
+
         #adaptacao .ods-card img {
             width: auto;
-            height: 70px;
+            height: 55px;
         }
 
         #adaptacao .objetivos .cards {
@@ -192,6 +208,23 @@
 
         #adaptacao .texto-mobile {
             display: none;
+        }
+
+        #adaptacao .carousel-nossos-projetos a {
+            text-decoration: none;
+        }
+
+        #adaptacao .col-20{
+            width: 20%;
+            position: relative;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+            float: left;
+        }
+
+        #brands {
+            display: none !important;
         }
 
         @media (max-width: 768px) {
@@ -242,6 +275,11 @@
                 font-weight: bold;
                 font-size: 10px;
             }
+
+            #adaptacao .col-20 {
+                width: 100% !important;
+            }
+
         }
 
         @media (min-width: 768px) {
@@ -254,7 +292,7 @@
 
     const url = window.location.pathname
 
-    if(url === "/instituto-andre-franco-vive" || url === "") {
+    if(url === "/instituto-andre-franco-vive" || url === "/") {
         const sectionHome = document.createElement("section")
         const sectionParceiros = document.createElement("section")
         const sectionAbout = document.querySelector("#about")
@@ -265,14 +303,8 @@
         sectionHome.innerHTML = `
             <div class="btn-topo container">
                 <div class="row">
-                    <div class="col-12 col-md-4">
-                        <a class="btn btn-home" href="#">SEJA VOLUNTÁRIO</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a class="btn btn-home" href="#">FINANCIE UM PROJETO</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a class="btn btn-home" href="#">DOE HOJE E AJUDE ALGUÉM</a>
+                    <div class="col-12">
+                        <a class="btn btn-home btn-vermelho" href="https://andrefrancovive.org.br/empresa/doe-agora">DOE HOJE E AJUDE ALGUÉM</a>
                     </div>
                 </div>
             </div>
@@ -283,49 +315,59 @@
                 </div>
                 <div class="owl-carousel carousel-nossos-projetos owl-theme">
                     <div class="item">
-                        <div class="card">
-                            <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/coracao.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">SÓCIO </br> EDUCATIVO<h5/>
+                        <a href="https://andrefrancovive.org.br/empresa/socio-educativo">
+                            <div class="card">
+                                <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/coracao.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">SÓCIO </br> EDUCATIVO<h5/>
+                                </div>
+                                <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
                             </div>
-                            <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
-                        </div>
+                        </a>
                     </div>
                     <div class="item">
-                        <div class="card">
-                            <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/maos.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">LEIS DE </br>INCENTIVO<h5/>
+                        <a href="#">
+                            <div class="card">
+                                <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/maos.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">LEIS DE </br>INCENTIVO<h5/>
+                                </div>
+                                <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
                             </div>
-                            <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
-                        </div>
+                        </a>
                     </div>
                     <div class="item">
-                        <div class="card">
-                            <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/jovem.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">JOVEM </br>APRENDIZ<h5/>
+                        <a href="https://andrefrancovive.org.br/empresa/fale-conosco">
+                            <div class="card">
+                                <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/jovem.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">SEJA </br>VOLUNTÁRIO<h5/>
+                                </div>
+                                <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
                             </div>
-                            <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
-                        </div>
+                        </a>
                     </div>
                     <div class="item">
-                        <div class="card">
-                            <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/chapeu.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">FORMAÇÃO </br> BÁSICA<h5/>
+                        <a href="https://andrefrancovive.org.br/empresa/gastronomia">
+                            <div class="card">
+                                <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/chapeu.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">FORMAÇÃO </br> BÁSICA<h5/>
+                                </div>
+                                <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
                             </div>
-                            <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
-                        </div>
+                        </a>
                     </div>
                     <div class="item">
-                        <div class="card">
-                            <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/mala.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">CAPACITAÇÃO DOS </br>TRABALHADORES<h5/>
+                        <a href="https://andrefrancovive.org.br/empresa/capacitacao-dos-colaboradores">
+                            <div class="card">
+                                <img class="card-img-top" src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/mala.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">CAPACITAÇÃO DOS </br>TRABALHADORES<h5/>
+                                </div>
+                                <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
                             </div>
-                            <div class="texto-mobile"><span>SAIBA MAIS <span class="fa fa-arrow-right icon"></span></span></div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -336,7 +378,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <a href="#" class="bg-kids">
+                        <a href="https://andrefrancovive.org.br/empresa/voluntarios" class="bg-kids">
                             <div>
                                 <img src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/voluntariado.png" alt="">
                             </div>
@@ -347,7 +389,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6">
-                        <a href="#" class="bg-kids">
+                        <a href="https://andrefrancovive.org.br/empresa/doe-agora" class="bg-kids">
                             <div>
                                 <img src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/coracao-branco.png" alt="">
                             </div>
@@ -363,9 +405,9 @@
                 <div class="row">
                     <h2>ODS - Objetivo de desenvolvimento sustentável</h2>
                     <p>O INSTITUTO <span class="texto-azul">ANDRÉ FRANCO VIVE</span> ESTÁ ALINHADO AOS ODS</p>
-
+            
                     <div class="row cards">
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-20">
                             <div class="ods-card bg-vermelho">
                                 <div class="numero">
                                     <span>#01</span>
@@ -376,7 +418,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-20">
                             <div class="ods-card bg-verde">
                                 <div class="numero">
                                     <span>#03</span>
@@ -387,7 +429,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-20">
                             <div class="ods-card bg-vermelho ">
                                 <div class="numero">
                                     <span>#04</span>
@@ -398,7 +440,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-20">
+                            <div class="ods-card bg-vinho ">
+                                <div class="numero">
+                                    <span>#08</span>
+                                </div>
+                                <div class="conteudo">
+                                    <img src="https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pi/crescimento-economico.png" alt="Card image cap">
+                                    <p>TRABALHO DESCENTE </br> E CRESCIMENTO </br> ECÔNOMICO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-20">
                             <div class="ods-card bg-rosa">
                                 <div class="numero">
                                     <span>#10</span>
@@ -470,4 +523,5 @@
         })
     }
 })()
+
 

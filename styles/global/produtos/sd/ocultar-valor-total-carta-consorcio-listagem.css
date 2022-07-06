@@ -1,0 +1,5 @@
+.page--consortia div[data-match-height="card-consortia-item-offer-total-value"], 
+.page--consortia .card-consortia .card__content > hr:nth-child(2) {
+    display: none;
+}
+

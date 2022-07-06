@@ -1,0 +1,12 @@
+.showcase-simple .form-conversion__footer, .conversion-step__privacy-policy {
+    font-size: 0.65rem !important;
+    line-height: 0.8rem;
+}
+
+.showcase-simple .conversion-step__header-title {
+    font-size: 1.1rem !important;
+}
+
+.showcase-simple .conversion-step {
+    top: 30px !important;
+}
