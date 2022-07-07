@@ -24,10 +24,14 @@
   const headerPhones = document.querySelector('#header-card-phones')
   // headerPhones.classList.add('show')
 
-  Array.prototype.slice.call(document.querySelectorAll('.nav .nav-link'))
-  .filter(function (el) {
-    return el.textContent === ' Novos '
-  })[0].innerText = ' Veículos ';
+  const menuItems = document.querySelectorAll(".nav--accordion-mobile .nav-simple__link")
+  if(menuItems){
+    menuItems.forEach(element => {
+      if(element.innerHTML.includes("Novos")) {
+        element.innerText = element.innerText.replace("Novos", "Veículos")
+      }
+    });
+  }
 
   addStyle`
     header.header {
@@ -49,16 +53,7 @@
       width: 207px;
     }
 
-    .page__container {
-      max-width: 1190px !important;
-    }
-
     .header .container, .nav-simple .container {
-      margin: 0 20px;
-      padding: 0 16px;
-    }
-
-    .header .container {
       max-width: 1154px;
     }
 

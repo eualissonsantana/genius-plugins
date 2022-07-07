@@ -367,9 +367,6 @@
   background-color: #121212 !important;
 }
 
-.page__container {
-  max-width: 1200px;
-}
 
 .showcase-simple .conversion-step {
   right: 100px;
@@ -453,4 +450,10 @@ footer.footer {
 
 .nav-simple__link:hover {
   color: #00B3FA !important;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1190px !important;
+  }
 }
