@@ -396,3 +396,23 @@
     alterarTextoAltLogoFooter();
     alterarTituloFormularioPaginaRenaultOnDemand();
 })();
+
+// 07/07/2022 | Adicionar select de unidades na página customizada Renault Pro Mais
+(() => {
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const renaultProPage = window.location.href.includes("/renault-pro-mais");
+    
+        if(renaultProPage) {
+            var formComponentContainer = document.querySelector(
+                '.static-conversion-form'
+            ),
+            formProps = JSON.parse(formComponentContainer.getAttribute('data-props'));
+    
+            formProps.categories = JSON.parse(formProps.categories);
+            formProps.showCpf = !!JSON.parse(formProps.showCpf);
+            formProps.showUnits = true;
+    
+            render(h(StaticConversionFormApp, formProps), formComponentContainer);
+        }
+    });
+})();

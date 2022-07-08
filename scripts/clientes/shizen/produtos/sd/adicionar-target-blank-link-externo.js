@@ -7,7 +7,7 @@
             navLinks.forEach(navLink => {
                 const href = navLink.getAttribute("href");
 
-                if(!(href.includes("shizen") || href.includes("empresa/"))){
+                if(href.includes("http") || href.includes("https")){
                     navLink.setAttribute("target", "_blank");
                 }
             });

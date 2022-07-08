@@ -1,7 +1,6 @@
 (() => {
     //Direciona para o conteúdo após carregamento página "BYD Cars"
     //Alisson Santana
-    
     function conteudoByd() {
         console.log("Entrou no primeiro")
         const addStyle = (styles) => {
@@ -193,7 +192,7 @@
                     target: "volvo",
                     alt: "Volvo",
                     data_background_image: "https://legado.autoforce.com.br/assets/images/itavema/volvo.png",
-                    href: "https://volvo.itavema.com.br",
+                    href: "http://intercarvocal.com.br",
                     image: "https://legado.autoforce.com.br/assets/images/itavema/volvo.png"
                 },
                 {
@@ -310,6 +309,18 @@
                 }
     
                 addStyle(`
+                    .fiat-brand{
+                        background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pg/logo-fiat.png') !important;
+                    }
+
+                    .nissan-brand{
+                        background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pg/logo-nissan.png') !important;
+                    }
+
+                    .hyundai-brand{
+                        background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/itavema/produtos/pg/logo-hyundai.png') !important;
+                    }
+
                     @media (max-width: 767px){
                         #showcase header .brands ul li *:not(script){
                             width: 65px;
@@ -324,6 +335,14 @@
                         .hyundai-brand,
                         .nissan-brand{
                             height: 70px !important;
+                        }
+
+                        .hyundai-brand{
+                            width: 75px !important;
+                        }
+
+                        .nissan-brand{
+                            width: 45px !important;
                         }
     
                         .ktm-brand, .byd-brand{
@@ -349,7 +368,7 @@
                         }   
     
                         .hyundai-brand{
-                            width: 80px !important;
+                            width: 90px !important;
                             height: 80px !important;
                         }   
     
@@ -367,7 +386,7 @@
                         } 
     
                         .nissan-brand{
-                            width: 80px !important;
+                            width: 52px !important;
                             height: 80px !important;
                         }   
     
@@ -596,7 +615,7 @@
         const usedModels = document.querySelectorAll("#used_models .item-list .item-list-col");
         const actionIsExists = usedModels[0].querySelector(".item footer .action");
 
-        if(!actionIsExists && (location.pathname == "/")){
+        if(!actionIsExists && (location.pathname == "/" || location.pathname == "/grupo-itavema")){
             usedModels.forEach(usedModel => {
                 usedModel.setAttribute("style", "height: auto");
                 usedModel.querySelector(".item footer").setAttribute("style", "height: auto");
