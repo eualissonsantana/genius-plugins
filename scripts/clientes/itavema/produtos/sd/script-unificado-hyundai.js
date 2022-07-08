@@ -87,6 +87,34 @@
         });
     }
 
+    // 12/05/2022 | Alterar direcionamento de botão de agendamento de revisão 
+    // João Carlos
+    function alterarDirecionamentoBotaoAgendamentoRevisao(){
+        window.addEventListener("DOMContentLoaded", () => {
+            const isThisPage = ({ urlPiece }) => {
+                const fullURL = window.location.href
+                const result = fullURL.includes(urlPiece)
+        
+                return result
+            }
+    
+            if(isThisPage({ urlPiece: "/servicos" })){
+                let currentBtnSchedule = document.querySelector(".showcase-services__panel .showcase-services__panel-btn-schedule");
+                
+                if(currentBtnSchedule){
+                    let newBtnSchedule = document.createElement("a");
+                    newBtnSchedule.setAttribute("class", "btn button button--large button--primary showcase-services__panel-btn-schedule");
+                    newBtnSchedule.innerText = "Agendar Revisão";
+                    newBtnSchedule.href = "http://itavema.com.br/hyundai-itavema-motors/empresa/agendamento-de-servico";
+    
+                    currentBtnSchedule.after(newBtnSchedule);
+                    currentBtnSchedule.remove();
+                }
+            }
+        });
+    }
+
+
     // 01/06/2022 | Adicionar redirecionamento das páginas de ofertas para páginas de agradecimento
     // Inserido por: Alisson Santana
     function adicionaRedirectPaginaAgradecimento() {
@@ -324,4 +352,5 @@
     ocultarMenuOfertasUnicas();
     adicionarLinksNavegacaoFooter();
     alterarMenuOfertasParaPosVenda();
+    alterarDirecionamentoBotaoAgendamentoRevisao();
 })();
