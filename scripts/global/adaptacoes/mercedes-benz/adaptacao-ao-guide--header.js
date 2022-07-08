@@ -162,7 +162,6 @@ function addHeader(dealerImageSrc, currentDealerName) {
     @media screen and (min-width: 768px) {
       .nav-simple > .container {
         max-width: 1154px;
-        margin: 0 20px;
         padding: 0 16px;
       }
     }

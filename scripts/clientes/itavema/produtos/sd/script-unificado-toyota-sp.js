@@ -69,14 +69,14 @@
           const logoToyota = document.createElement('div')
         
           logoToyota.classList.add('header__navbar-item')
-          logoToyota.innerHTML = '<img class="navbar__logo-toyota" src="https://legado.autoforce.com.br/static/toyota/images/Toyota_logo_2019.png" />'
+          logoToyota.innerHTML = '<img class="navbar__logo-toyota" alt="Logo Toyota com letras brancas e fundo vermelho" width="100%" height="auto "src="https://legado.autoforce.com.br/static/toyota/images/Toyota_logo_2019.png" />'
         
           headerNavbar.appendChild(logoToyota)
         
           const headerNavbarMobile = document.querySelector('.header-mobile__buttons')
           const logoToyotaMob = document.createElement('div')
           logoToyotaMob.classList.add('header__navbar-item')
-          logoToyotaMob.innerHTML = '<img class="navbar__logo-toyota" src="https://legado.autoforce.com.br/static/toyota/images/Toyota_logo_2019_mob.png" />'
+          logoToyotaMob.innerHTML = '<img class="navbar__logo-toyota" width="100%" height="auto" alt="Logo Toyota com fundo vermelho" src="https://legado.autoforce.com.br/static/toyota/images/Toyota_logo_2019_mob.png" />'
         
           headerNavbarMobile.parentElement.appendChild(logoToyotaMob)
     }
@@ -339,7 +339,7 @@
                 <p>Juntos salvamos vidas.</p>
               </div>
               <div class="footer__dealer-logo">
-                <img src="https://legado.autoforce.com.br/plugins/images/global/adaptacoes/toyota/logo/toyota-logo.png" />
+                <img alt="logo Toyota com texto preto e fundo branco" width="100%" height="auto" src="https://legado.autoforce.com.br/plugins/images/global/adaptacoes/toyota/logo/toyota-logo.png" />
               </div>
             </div>
         `
@@ -1600,19 +1600,13 @@
             menuItems.forEach(element => {
                 if(element.innerHTML.includes("Ofertas Únicas")) {
                     element.remove()
+                } else if(element.innerHTML.includes("Agendamento de serviço")) {
+                    element.remove()
                 }
             });
         }
     }
-    
-    function ocultaAgendamentoServico() {
-        Array.prototype.slice.call(document.querySelectorAll('.nav .nav-link'))
-            .filter(function (el) {
-                return el.textContent === ' Agendamento de serviço '
-            })[0].parentNode.classList.add('d-none')
-    }
-    
-    
+      
     
     adaptacaoHeader()
     adaptacaoFooter()
@@ -1630,5 +1624,4 @@
     alteraDirecionamentoAgendamentoRevisao()
     ocultaItensMenu()
     ocultaOfertasUnicas()
-    ocultaAgendamentoServico()
 })()
