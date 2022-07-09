@@ -19,10 +19,18 @@
                 name: "Seminovos",
                 target: "seminovos",
                 alt: "Seminovos",
-                data_background_image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-seminovos-enzo.png",
-                href: "/itva-motos",
-                image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-seminovos-enzo.png"
-            }
+                data_background_image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-seminovos.png",
+                href: "https://seminovosgrupoenzo.com.br",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-seminovos.png"
+            },
+            {
+                name: "Toyota Via Japam",
+                target: "toyota-via-japam",
+                alt: "Via Japam Tyt",
+                data_background_image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-toyota-via-japam.png",
+                href: "https://viajapan.com.br",
+                image: "https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-toyota-via-japam.png"
+            },
         ];
 
         let showcaseSlideWrapper;
@@ -72,6 +80,9 @@
                 else if(altLink.includes("Toyota")){
                     link.classList.add("toyota-brand");
                 }
+                else if(altLink.includes("Via Japam")){
+                    link.classList.add("toyota-via-japam-brand");
+                }
                 else if(altLink.includes("Volvo")){
                     link.classList.add("volvo-brand");
                 }
@@ -102,6 +113,9 @@
                 else if(altLink.includes("Harley Davidson")){
                     link.classList.add("harley-davidson-brand");
                 }
+                else if(altLink.includes("Seminovos")){
+                    link.classList.add("seminovos-brand");
+                }
             });         
 
             addStyle(`
@@ -110,8 +124,52 @@
                 }
 
                 .chevrolet-brand{
-                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-chevrolet.png') !important;
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-nacao-chevrolet-1.png') !important;
                 }
+
+                .toyota-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-toyota-kampai.png') !important;
+                }
+
+                .volvo-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-volvo-1.png') !important;
+                }
+
+                .renault-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-guara-renault.png') !important;
+                }
+
+                .fiat-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-fiat.png') !important;
+                }
+
+                .venda-direta-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-enzo-mobility.png') !important;
+                }
+
+                .triumph-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-triumph.png') !important;
+                }
+
+                .mercedes-benz-do-brasil-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-mercedes.png') !important;
+                }
+
+                .jaguar-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-jaguar.png') !important;
+                }
+
+                .chrysler-jeep-dodge-ram-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-jeep.png') !important;
+                }
+
+                .land-rover-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-lr.png') !important;
+                }
+
+                .harley-davidson-brand{
+                    background-image: url('https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/pg/logo-harley-davidson-1.png') !important;
+                }  
 
                 @media (max-width: 767px){
                     #showcase header .brands ul li *:not(script){
@@ -123,6 +181,63 @@
                     .volvo-brand{
                         height: 38px !important;
                     }  
+
+                    .chevrolet-brand{
+                        height: 28px !important;
+                    }
+
+                    .venda-direta-brand{
+                        height: 85px !important;
+                        width: 60px !important;
+                    }
+
+                    .fiat-brand{
+                        height: 80px !important;
+                    }
+
+                    .triumph-brand{
+                        height: 75px !important;
+                    }
+
+                    .mercedes-benz-do-brasil-brand{
+                        height: 70px !important;
+                        width: 75px !important;
+                    }
+
+                    .toyota-brand,
+                    .toyota-via-japam-brand{
+                        height: 80px !important;
+                        width: 80px !important;
+                    }   
+
+                    .renault-brand{
+                        height: 57px !important; 
+                    }
+
+                    .jaguar-brand,
+                    .land-rover-brand{
+                        height: 80px !important;
+                        width: 80px !important;
+                    }
+
+                    .chrysler-jeep-dodge-ram-brand{
+                        height: 70px !important;
+                        width: 65px !important;
+                    }
+
+                    .volvo-brand{
+                        height: 60px !important;
+                        width: 70px !important;
+                    }
+
+                    .harley-davidson-brand{
+                        height: 80px !important;
+                        width: 90px !important;
+                    }
+
+                    .seminovos-brand{
+                        height: 60px !important;
+                    }
                 }
 
                 @media (min-width: 768px){
@@ -130,25 +245,28 @@
                         background-size: contain !important;
                     }
     
-                    .toyota-brand{
-                        height: 60px !important;
+                    .toyota-brand,
+                    .toyota-via-japam-brand{
+                        height: 100px !important;
+                        width: 90px !important;
                     }   
 
                     .volvo-brand{
-                        height: 45px !important;
+                        height: 85px !important;
+                        width: 85px !important;
                     }   
 
                     .renault-brand{
-                        height: 55px !important;
+                        height: 65px !important;
                     }   
 
                     .fiat-brand{
-                        height: 70px !important;
-                        width: 65px !important;
+                        height: 75px !important;
+                        width: 80px !important;
                     }  
 
                     .venda-direta-brand{
-                        width: 95px !important;
+                        width: 92px !important;
                         height: 80px !important;
                     }
 
@@ -162,27 +280,33 @@
                     }
 
                     .mercedes-benz-do-brasil-brand{
-                        height: 70px !important;
+                        height: 90px !important;
+                        width: 90px !important;
                     }
 
-                    .jaguar-brand{
-                        height: 65px !important;
+                    .jaguar-brand,
+                    .land-rover-brand{
+                        height: 100px !important;
+                        width: 100px !important;
                     }
 
                     .chrysler-jeep-dodge-ram-brand{
-                        height: 50px !important;
-                    }
-
-                    .land-rover-brand{
-                        height: 65px !important;
+                        height: 90px !important;
+                        width: 85px !important;
                     }
 
                     .chevrolet-brand{
-                        height: 70px !important;
+                        height: 36px !important;
                     }
 
                     .harley-davidson-brand{
-                        height: 65px !important;
+                        height: 100px !important;
+                        width: 115px !important;
+                    }
+
+                    .seminovos-brand{
+                        height: 85px !important;
+                        width: 80px !important;
                     }
                 }
             `);
@@ -202,7 +326,7 @@
                             items: 4
                         },
                         1000:{
-                            items: 9
+                            items: 8
                         }
                     }
                 });
