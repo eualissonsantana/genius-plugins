@@ -19,7 +19,7 @@
         const styles = `
             
     
-            .header-desktop ..header__navbar-item:not(:last-child) {
+            .header-desktop .header__navbar-item:not(:last-child) {
                 margin-right: 10px !important;
             }
     
@@ -611,10 +611,95 @@
             }
         });
     }
+
+    function alterarLinksPoliticaPrivacidade() {
+        document.addEventListener('readystatechange', event => { 
+    
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            if (event.target.readyState === "complete") {
+                // function
+                const linkPolicyFormSD = document.querySelector(".form-conversion__footer a")
+                const linkPolicyFormPortal = document.querySelector(".form-module .call-modal")
+                const linkPolicyFooterSD = document.querySelector(".footer__copyright a")
+                const linkPolicyFooterPortal = document.querySelector("#copyright a")
+                const page = window.location.href
+                const urlBase = "https://www.itavema.com.br/"
+                const urlPolicy = "/empresa/politica-de-privacidade"
+                const menuItemsSD = document.querySelectorAll(".nav--accordion-mobile .nav-item")
+            
+                if(linkPolicyFooterPortal ){
+                    const newLink = linkPolicyFooterPortal.cloneNode(true)
+                    newLink.setAttribute("href", "https://www.itavema.com.br/empresa/politica-de-privacidade")
+                    linkPolicyFooterPortal.after(newLink)
+                    linkPolicyFooterPortal.remove()
+                }
+                
+                if(linkPolicyFormPortal) {
+                    const newLink = linkPolicyFormPortal.cloneNode(true)
+                    newLink.setAttribute("href", "https://www.itavema.com.br/empresa/politica-de-privacidade")
+                    linkPolicyFormPortal.after(newLink)
+                    linkPolicyFormPortal.remove()
+                }
+            
+                if(menuItemsSD) {
+                    menuItemsSD.forEach(element => {
+                        if(element.innerHTML.includes("Política de Privacidade")) {
+                            element.remove()
+                        }
+                    });
+                }
+            
+                if(linkPolicyFooterSD) {
+                    if(page.includes("toyota-inter-japan-rj")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "toyota-inter-japan-rj" + urlPolicy)
+                    } else if(page.includes("toyota-inter-japan-sp")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "toyota-inter-japan-sp" + urlPolicy)
+                    } else if(page.includes("byd")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "byd" + urlPolicy)
+                    } else if(page.includes("nissan-itavema-japan")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "nissan-itavema-japan" + urlPolicy)
+                    } else if(page.includes("itva-motos")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "itva-motos" + urlPolicy)
+                    } else if(page.includes("renaultfrance")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "renaultfrance" + urlPolicy)
+                    } else if(page.includes("fiat")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "fiat" + urlPolicy)
+                    } else if(page.includes("hyundai-itavema-motors")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "hyundai-itavema-motors" + urlPolicy)
+                    } else if(page.includes("itavema-seminovos")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "itavema-seminovos" + urlPolicy)
+                    } 
+                }
+            
+                if(linkPolicyFormSD) {
+                    if(page.includes("toyota-inter-japan-rj")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "toyota-inter-japan-rj" + urlPolicy)
+                    } else if(page.includes("toyota-inter-japan-sp")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "toyota-inter-japan-sp" + urlPolicy)
+                    } else if(page.includes("byd")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "byd" + urlPolicy)
+                    } else if(page.includes("nissan-itavema-japan")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "nissan-itavema-japan" + urlPolicy)
+                    } else if(page.includes("itva-motos")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "itva-motos" + urlPolicy)
+                    } else if(page.includes("renaultfrance")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "renaultfrance" + urlPolicy)
+                    } else if(page.includes("fiat")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "fiat" + urlPolicy)
+                    } else if(page.includes("hyundai-itavema-motors")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "hyundai-itavema-motors" + urlPolicy)
+                    } else if(page.includes("itavema-seminovos")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "itavema-seminovos" + urlPolicy)
+                    } 
+                }
+            }
+        });
+    }
     
     // Chamada das funções
     adicionaRedesSociaisHeader()
     agrupaTelefonesPorMarcas()
     agruparWhatsPorMarca()
     alteraMarcasFormularioMap()
+    alterarLinksPoliticaPrivacidade()
 })()

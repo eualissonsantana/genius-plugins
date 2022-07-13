@@ -170,9 +170,19 @@
         });
     }
 
-    // 09/06/2022 | Adiciona links de navegação no footer
-    // Alisson Santana
-    function adicionarLinksNavegacaoFooter(){
+    // 21/06/2022 | SCRIPT PARA RENOMEAR MENU PRINCIPAL - ALTERANDO DE OFERTAS PARA PÓS VENDA
+    // INSERIDO POR: Bruno
+    // SOLICITADO POR: Rafael
+    function alterarMenuOfertasParaPosVenda(){
+        document.querySelectorAll('.nav .nav-link').forEach(navLink => {
+            if(String(navLink.innerHTML).trim() == "Serviços"){
+                navLink.innerHTML = `Pós Venda`;
+            }
+        });
+    }
+
+    function adicionaSitemapFooter() {
+
         const addStyle = (styles) => {
             const css = styles,
                 head = document.head || document.getElementsByTagName('head')[0],
@@ -187,27 +197,32 @@
             }
         }
     
-        addStyle `
-            @media (min-width: 1200px){
-                .footer .container{
-                    max-width: 1128px !important;
-                }
-    
+        addStyle`
+            .sitemap-item{
+                padding: 6px 18px;
+                margin-top: 20px;
             }
     
-            .footer-content__col {
-                flex-basis: 20%;
-            }
-    
-            .footer-content__title {
-                /* font-size: 16px !important; */
+            .sitemap-item a {
                 font-size: 1rem;
                 font-weight: bold;
                 position: relative;
                 color: #fff;
             }
     
-            .footer-content__link-list__link {
+            .sitemap-item ul {
+                padding-left: 0;
+            }
+    
+            .sitemap-item ul li{
+                list-style: none;
+            }
+    
+            .container--logo-footer {
+                padding: 38px 0;
+            }
+    
+            .sitemap-deepitem a{
                 font-size: 13px;
                 font-size: .8125rem;
                 font-weight: 400;
@@ -217,132 +232,226 @@
                 transition: color .2s ease-in-out;
                 line-height: 25px;
                 line-height: 1.5625rem;
-            } 
-            
-            .footer-content__link-list__link:hover {
-                color: #fff;
-                text-decoration: none;
-            }
-            
-            .footer-content__link-list__link:before {
-                content: "-";
-                margin-right: 2px;
-                display: inline-block;
-                -webkit-transition: margin-right .2s ease-in-out;
-                transition: margin-right .2s ease-in-out;
             }
     
-            .footer-content__link-list {
-                padding-left: 0;
-                list-style: none;
+            .sitemap__list-deep-link {
+                margin-top: 10px;
             }
     
-            .container--logo-footer {
-                padding: 38px 0;
+            @media (max-width: 768px) {
+                .sitemap-item {
+                    margin-top: 0;
+                    width: 100%;
+                }
             }
     
-            @media (max-width: 768px){
-                .footer-content {
-                    padding-left: 30px;
+    
+        `
+    
+        const menuItems = document.querySelectorAll(".nav--accordion-mobile .nav-item") 
+        let dataLinkItems = []
+        let dataDeepLinkItems = []
+    
+        if(menuItems) {
+            menuItems.forEach(element => {
+                let titleNavLink = element.querySelector(".nav-link").innerText
+                let hrefNavLink = element.querySelector(".nav-link").getAttribute("href")
+                let targetNavLink = element.querySelector(".nav-link").getAttribute("target")
+                let dropdownItems = element.querySelectorAll(".card-collapse-deep__title")
+                
+                let link = new Object()
+                link.texto = titleNavLink
+                link.href = hrefNavLink
+                link.temDrop = false
+                if(targetNavLink) {
+                    link.target = targetNavLink
+                } else {
+                    link.target = "_self"
                 }
     
-                .footer-content__link-list__link {
-                    font-size: 16px;
-                    line-height: 32px;
-                }
-    
-            }
-        `
-    
-        const styleToyota = `
-            .footer-content__title {
-                color: #333 !important;
-            }
-        `
-        const logoDiv = document.createElement("div")
-        logoDiv.classList.add("container", "container--logo-footer", "px-0")
-    
-        logoDiv.innerHTML = ` 
-            <div class="text-center">
-                <a href="https://itavema.com.br/" target="_blank">
-                    <img src="https://production.autoforce.com/uploads/group/logo_white/483/logo_comprar-grupo-itavema_c3b4d2fa03.png" width="150">
-                </a>
-            </div>
-        `
-    
-        const footer = document.querySelector("footer.footer .container")
-        const footerSeparator = document.querySelector(".footer__separator")
-    
-        if (footer) {
-            const container = document.createElement("div")
-            container.classList.add("container", "px-0")
-    
-            const footerContent = document.createElement("div")
-            footerContent.classList.add("footer-content", "d-block", "d-md-flex", "flex-wrap")
-    
-            container.appendChild(footerContent)
-    
-            const divMap = document.createElement("div")
-    
-            divMap.classList.add("footer-content__col")
-    
-            const makeSitemapItem = (brand, slug) => {
-                return `
+                
+                let dropdownLinksList = []
+                
+                if(dropdownItems.length > 0) {
+                    link.temDrop = true
+                    dropdownItems.forEach(deepTitle => {
+                        let dropdownLink = new Object()
+                        let texto = deepTitle.innerText
+                        let href = deepTitle.getAttribute("href")
+                        let target = deepTitle.getAttribute("target")
                         
-                        <p class="footer-content__title">${brand}</p>
-                        <ul class="footer-content__link-list">
-                            <li class="footer-content__link-list__item">
-                                <a target="_blank" href="https://itavema.com.br/${slug}/novos" class="footer-content__link-list__link">
-                                    Novos
-                                </a>
-                            </li>
-                            <li class="footer-content__link-list__item">
-                                <a target="_blank" href="https://itavema.com.br/${slug}/seminovos" class="footer-content__link-list__link">
-                                    Seminovos
-                                </a>
-                            </li>
-                            <li class="footer-content__link-list__item">
-                                <a target="_blank" href="https://itavema.com.br/${slug}/ofertas" class="footer-content__link-list__link">
-                                    Ofertas
-                                </a>
-                            </li>
-                            <li class="footer-content__link-list__item">
-                                <a target="_blank" href="https://itavema.com.br/${slug}/servicos" class="footer-content__link-list__link">
-                                    ServiÃ§os
-                                </a>
-                            </li>
-                        </ul>`
+                        dropdownLink.pai = titleNavLink
+                        dropdownLink.texto = texto
+                        dropdownLink.href = href
+                        dropdownLink.target = target
+    
+                        dropdownLinksList.push(dropdownLink)
+                    });
+    
+                    dataDeepLinkItems.push(dropdownLinksList)
+                }
+    
+                dataLinkItems.push(link)
+            });
+    
+            const sitemapFooter = document.createElement("div")
+            const sitemapRow = document.createElement("div")
+            sitemapFooter.classList.add("container", "sitemap-footer")
+            sitemapRow.classList.add("row")
+    
+            sitemapFooter.appendChild(sitemapRow)
+            
+            const makeLinkElement = (navLinkText, navLinkHref, navLinkTarget) => {
+                return `
+                    <a href="${navLinkHref}" target="${navLinkTarget}">
+                        ${navLinkText}
+                    </a>
+                `  
             }
     
-            const page = window.location.href
-    
-            if(page.includes("fiat")) {
-                divMap.innerHTML = makeSitemapItem("Fiat Itavema", "fiat")
-            } else if (page.includes("hyundai")) {
-                divMap.innerHTML = makeSitemapItem("Hyundai Itavema Motors", "hyundai-itavema-motors")
-            } else if (page.includes("itva-motos")) {
-                divMap.innerHTML = makeSitemapItem("ITVA Motos", "itva-motos")
-            } else if (page.includes("nissan")) {
-                divMap.innerHTML = makeSitemapItem("Nissan Itavema Japan ", "nissan-itavema-japan")
-            } else if (page.includes("renault")) {
-                divMap.innerHTML = makeSitemapItem("Renault Itavema France", "renaultfrance")
+            const makeDeepLinkElement = (deepLinkText, deepLinkHref, deepLinkTarget) => {
+                return `
+                    <li>
+                        <a href="${deepLinkHref}" target="${deepLinkTarget}">
+                            - ${deepLinkText}
+                        </a>
+                    </li>
+                `  
             }
     
-            footerContent.appendChild(divMap)
+            // Exclui o primeiro item da lista que é o ícone "home"
+            dataLinkItems.shift()
     
-            footer.insertBefore(logoDiv, footerSeparator)
-            footer.insertBefore(footerContent, footerSeparator)
+            //Itera a lista com os links principais do menu
+            dataLinkItems.forEach(data => {
+                let item = document.createElement("div")
+                item.classList.add("sitemap-item")
+    
+                let clone = item.cloneNode(true)
+                clone.innerHTML = makeLinkElement(data.texto, data.href, data.target)
+    
+                sitemapRow.appendChild(clone)
+    
+                // Cria os elementos do dropdown, caso exista
+                if(data.temDrop) {
+                    let deepLinksList = document.createElement("ul")
+                    deepLinksList.classList.add("sitemap__list-deep-link")
+                    dataDeepLinkItems.forEach(deepData => {
+    
+                        for (let index = 0; index < deepData.length; index++) {
+                            if(deepData[index].pai === data.texto) {
+                                let deepItem = document.createElement("div")
+                                deepItem.classList.add("sitemap-deepitem")
+        
+                                let deepClone = deepItem.cloneNode(true)
+                                deepClone.innerHTML = makeDeepLinkElement(deepData[index].texto, deepData[index].href, deepData[index].target)
+                                deepLinksList.appendChild(deepClone)
+                            }
+                        }
+                    });
+    
+                    clone.appendChild(deepLinksList)
+                } 
+            });
+    
+            const logoDiv = document.createElement("div")
+            logoDiv.classList.add("container", "container--logo-footer", "px-0")
+    
+            logoDiv.innerHTML = ` 
+                <div class="text-center">
+                    <a href="https://itavema.com.br/" target="_blank">
+                        <img src="https://production.autoforce.com/uploads/group/logo_white/483/logo_comprar-grupo-itavema_c3b4d2fa03.png" width="150">
+                    </a>
+                </div>
+            `
+    
+            const footerSocialNetwors = document.querySelector(".footer__social-networks")
+            footerSocialNetwors.after(sitemapFooter)
+            footerSocialNetwors.after(logoDiv)
     
         }
     }
 
-    // 21/06/2022 | SCRIPT PARA RENOMEAR MENU PRINCIPAL - ALTERANDO DE OFERTAS PARA PÓS VENDA
-    // INSERIDO POR: Bruno
-    // SOLICITADO POR: Rafael
-    function alterarMenuOfertasParaPosVenda(){
-        document.querySelectorAll('.nav .nav-link').forEach(navLink => {
-            if(String(navLink.innerHTML).trim() == "Serviços"){
-                navLink.innerHTML = `Pós Venda`;
+    function alterarLinksPoliticaPrivacidade() {
+        document.addEventListener('readystatechange', event => { 
+    
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            if (event.target.readyState === "complete") {
+                // function
+                const linkPolicyFormSD = document.querySelector(".form-conversion__footer a")
+                const linkPolicyFormPortal = document.querySelector(".form-module .call-modal")
+                const linkPolicyFooterSD = document.querySelector(".footer__copyright a")
+                const linkPolicyFooterPortal = document.querySelector("#copyright a")
+                const page = window.location.href
+                const urlBase = "https://www.itavema.com.br/"
+                const urlPolicy = "/empresa/politica-de-privacidade"
+                const menuItemsSD = document.querySelectorAll(".nav--accordion-mobile .nav-item")
+            
+                if(linkPolicyFooterPortal ){
+                    const newLink = linkPolicyFooterPortal.cloneNode(true)
+                    newLink.setAttribute("href", "https://www.itavema.com.br/empresa/politica-de-privacidade")
+                    linkPolicyFooterPortal.after(newLink)
+                    linkPolicyFooterPortal.remove()
+                }
+                
+                if(linkPolicyFormPortal) {
+                    const newLink = linkPolicyFormPortal.cloneNode(true)
+                    newLink.setAttribute("href", "https://www.itavema.com.br/empresa/politica-de-privacidade")
+                    linkPolicyFormPortal.after(newLink)
+                    linkPolicyFormPortal.remove()
+                }
+            
+                if(menuItemsSD) {
+                    menuItemsSD.forEach(element => {
+                        if(element.innerHTML.includes("Política de Privacidade")) {
+                            element.remove()
+                        }
+                    });
+                }
+            
+                if(linkPolicyFooterSD) {
+                    if(page.includes("toyota-inter-japan-rj")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "toyota-inter-japan-rj" + urlPolicy)
+                    } else if(page.includes("toyota-inter-japan-sp")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "toyota-inter-japan-sp" + urlPolicy)
+                    } else if(page.includes("byd")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "byd" + urlPolicy)
+                    } else if(page.includes("nissan-itavema-japan")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "nissan-itavema-japan" + urlPolicy)
+                    } else if(page.includes("itva-motos")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "itva-motos" + urlPolicy)
+                    } else if(page.includes("renaultfrance")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "renaultfrance" + urlPolicy)
+                    } else if(page.includes("fiat")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "fiat" + urlPolicy)
+                    } else if(page.includes("hyundai-itavema-motors")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "hyundai-itavema-motors" + urlPolicy)
+                    } else if(page.includes("itavema-seminovos")) {
+                        linkPolicyFooterSD.setAttribute("href", urlBase + "itavema-seminovos" + urlPolicy)
+                    } 
+                }
+            
+                if(linkPolicyFormSD) {
+                    if(page.includes("toyota-inter-japan-rj")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "toyota-inter-japan-rj" + urlPolicy)
+                    } else if(page.includes("toyota-inter-japan-sp")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "toyota-inter-japan-sp" + urlPolicy)
+                    } else if(page.includes("byd")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "byd" + urlPolicy)
+                    } else if(page.includes("nissan-itavema-japan")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "nissan-itavema-japan" + urlPolicy)
+                    } else if(page.includes("itva-motos")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "itva-motos" + urlPolicy)
+                    } else if(page.includes("renaultfrance")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "renaultfrance" + urlPolicy)
+                    } else if(page.includes("fiat")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "fiat" + urlPolicy)
+                    } else if(page.includes("hyundai-itavema-motors")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "hyundai-itavema-motors" + urlPolicy)
+                    } else if(page.includes("itavema-seminovos")) {
+                        linkPolicyFormSD.setAttribute("href", urlBase + "itavema-seminovos" + urlPolicy)
+                    } 
+                }
             }
         });
     }
@@ -350,7 +459,8 @@
     removeFormWhatsapp();
     adicionaRedirectPaginaAgradecimento();
     ocultarMenuOfertasUnicas();
-    adicionarLinksNavegacaoFooter();
     alterarMenuOfertasParaPosVenda();
     alterarDirecionamentoBotaoAgendamentoRevisao();
+    adicionaSitemapFooter();
+    alterarLinksPoliticaPrivacidade()
 })();
