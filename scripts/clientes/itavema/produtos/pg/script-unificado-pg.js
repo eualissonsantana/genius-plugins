@@ -695,26 +695,32 @@
                     background: url('https://production.autoforce.com/uploads/brand/logo_regular/20/logo_brand_comprar-renault_24beec20fe.png') no-repeat;
                 }
             `);
-        
-            const itensServico = document.querySelectorAll(".menu-geral li:nth-child(6) .dropdown-submenu-title a")
-        
-            if (itensServico) {
-                itensServico.forEach(element => {
-                    if (element.innerHTML.includes("Nissan")) {
-                        element.classList.add("nissan-img", "img-menu")
-                    } else if (element.innerHTML.includes("Hyundai")) {
-                        element.classList.add("hyundai-img", "img-menu")
-                    } else if (element.innerHTML.includes("Toyota São Paulo")) {
-                        element.classList.add("toyota-img-sp", "img-menu")
-                    } else if (element.innerHTML.includes("Toyota Rio de Janeiro")) {
-                        element.classList.add("toyota-img-rj", "img-menu")
-                    } else if (element.innerHTML.includes("Renault")) {
-                        element.classList.add("renault-img", "img-menu")
-                    } else if (element.innerHTML.includes("Fiat")) {
-                        element.classList.add("fiat-img", "img-menu")
-                    } 
-                });
-            }
+            
+            const itensMenu = document.querySelectorAll(".menu-geral li")
+
+            itensMenu.forEach(element => {
+                if(element.innerHTML.includes("Agende Serviços")) {
+                    const itensServico = element.querySelectorAll(".dropdown-submenu-title a")
+
+                    if (itensServico) {
+                        itensServico.forEach(element => {
+                            if (element.innerHTML.includes("Nissan")) {
+                                element.classList.add("nissan-img", "img-menu")
+                            } else if (element.innerHTML.includes("Hyundai")) {
+                                element.classList.add("hyundai-img", "img-menu")
+                            } else if (element.innerHTML.includes("Toyota São Paulo")) {
+                                element.classList.add("toyota-img-sp", "img-menu")
+                            } else if (element.innerHTML.includes("Toyota Rio de Janeiro")) {
+                                element.classList.add("toyota-img-rj", "img-menu")
+                            } else if (element.innerHTML.includes("Renault")) {
+                                element.classList.add("renault-img", "img-menu")
+                            } else if (element.innerHTML.includes("Fiat")) {
+                                element.classList.add("fiat-img", "img-menu")
+                            } 
+                        });
+                    }
+                }
+            });
         });
     }
 

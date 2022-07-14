@@ -24,6 +24,10 @@ function addHeader(dealerImageSrc, currentDealerName) {
   header.appendChild(logosWrapper)
 
   addStyle`
+    .header__navbar-item, .header__navbar-title--label, .header__networks, .header__navbar-title {
+      display: none !important;
+    }
+
     .mercedes-dealer-logos {
       display: flex;
       align-items: center;

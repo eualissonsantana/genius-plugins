@@ -149,7 +149,7 @@
       pointer-events: none;
     }
 
-    .carousel-vehicles-new, .footer__social-networks {
+    .footer__social-networks {
       display: none !important;
     }
 

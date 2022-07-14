@@ -27,6 +27,9 @@
     
     const page = window.location.pathname
     const slug = page.split('/novos')[1];
+    let model = document.querySelector(".vehicle-details .section-component__title span").innerText
+    model = model.replace("Massey Ferguson", "")
+
     if(slug) {
         const urlBase = "https://legado.autoforce.com.br/plugins/files/global/marcas/massey-ferguson"
         const urlPdf = urlBase + slug + ".pdf"
@@ -39,7 +42,7 @@
                 <a href="${urlPdf}" target="_blank" title="BAIXAR O CATÁLOGO">
                     <img src="https://www.masseyferguson.com/content/dam/public/masseyfergusonglobal/markets/en/icons/download-a-brochure.svg" alt="BAIXAR O CATÁLOGO">
                     <h2 class="section-component__title section-component__title--small">BAIXAR O CATÁLOGO</h2>
-                    <small>Explore os detalhes da plantadeira MF 100 e saiba como ela pode ajudá-lo. </small>
+                    <small>Explore os detalhes da plantadeira ${model} e saiba como ela pode ajudá-lo. </small>
                 </a>
             `
     

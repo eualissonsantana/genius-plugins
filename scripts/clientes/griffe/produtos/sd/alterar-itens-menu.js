@@ -19,6 +19,20 @@
             flex-flow: wrap;
         }
 
+        .header .nav-item {
+            font-size: 0.75rem !important;
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.7rem !important;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1360px !important;
+            }
+        }
+
     `
     const menuLinks = document.querySelectorAll(".header-navbar__items .nav-link")
     const menuLinksWithSubmenu = document.querySelectorAll(".header-navbar__items .with-submenu")
@@ -26,7 +40,6 @@
 
     if(menuLinks) {
         menuLinks.forEach(element => {
-            console.log(element)
             if(element.innerText == "NOVOS" || element.innerText == "PEÇAS" || element.innerText == "CONSÓRCIO" || element.innerText == "SEGUROS")  {
                 element.parentNode.remove()
             }
