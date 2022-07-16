@@ -49,7 +49,7 @@
     window.addEventListener("DOMContentLoaded", () => {
         navItems = document.querySelectorAll("header .nav-wrapper-dinamic .nav-wrapper-menu .nav > li");
 
-        reorder(navItems[3], navItems[2]);
-        insertAfter(navItems[1], navItems[2]);
+        reorder(navItems[2], navItems[4]);
+        insertAfter(navItems[5], navItems[3]);
     });
 })();
