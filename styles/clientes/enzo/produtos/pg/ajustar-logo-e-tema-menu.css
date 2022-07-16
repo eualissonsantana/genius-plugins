@@ -1,0 +1,38 @@
+#showcase header .showcase .showcase-grid{
+    background-image: unset;
+    background-color: #0d3dff;
+}
+
+#showcase .showcase-grid .nav-wrapper-dinamic .brand-client a,
+#showcase .showcase-slides .nav-wrapper-dinamic .brand-client a,
+#footer .footer-wrapper-dinamic .brand-client a{
+    background-position: unset;
+}
+
+#showcase .showcase-grid .nav-wrapper-dinamic .brand-client a{
+    background-size: contain;
+}
+
+#showcase .showcase-slides .nav-wrapper-dinamic .brand-client a,
+#footer .footer-wrapper-dinamic .brand-client a,
+#showcase .showcase-grid .nav-wrapper-dinamic .brand-client a:nth-child(2){
+    background-size: auto;
+}
+
+#showcase header .nav-wrapper-dinamic .navbar-header .navbar-toggle{
+    margin-top: 15px !important;
+}
+
+@media screen and (max-width: 767px){
+    #showcase header .showcase .nav-wrapper-dinamic, 
+    #showcase header .showcase-slides .nav-wrapper-dinamic{
+        padding: 15px 10px 0 !important;
+    }
+}
+
+@media screen and (min-width: 768px){
+    #showcase .showcase-grid .nav-wrapper-dinamic .brand-client,
+    #showcase .showcase-slides .nav-wrapper-dinamic .brand-client{
+        padding-left: 1rem;
+    }
+}
