@@ -1358,7 +1358,6 @@
         
                     garantia5Anos.forEach(element => {
                         if(page.includes(element) && isFlex) {
-                            console.log(isFlex)
                             imgModel.appendChild(selo5Anos)
                             seloGarantia = true
                         } 
@@ -1391,7 +1390,6 @@
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A:Z?key=${keyAPI}`)
             const data = await response.json()
             const slugs = data.values
-            console.log(slugs)
             let dataRedirect = []
             let url = {
                 origem: '',
@@ -1734,6 +1732,7 @@
             const urlBase = "https://www.itavema.com.br/"
             const urlPolicy = "/empresa/politica-de-privacidade"
             const menuItemsSD = document.querySelectorAll(".nav--accordion-mobile .nav-item")
+            console.log("TESTE POLÍTICA DE PRIVACIDADE " + menuItemsSD)
         
             if(linkPolicyFooterPortal ){
                 const newLink = linkPolicyFooterPortal.cloneNode(true)

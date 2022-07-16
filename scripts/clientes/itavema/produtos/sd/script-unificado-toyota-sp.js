@@ -1882,6 +1882,7 @@
     });
 }
     
+    alterarLinksPoliticaPrivacidade()
     adaptacaoHeader()
     adaptacaoFooter()
     adaptacaoCarousel()
@@ -1899,5 +1900,4 @@
     ocultaItensMenu()
     ocultaOfertasUnicas()
     adicionaSitemapFooter()
-    alterarLinksPoliticaPrivacidade()
 })()

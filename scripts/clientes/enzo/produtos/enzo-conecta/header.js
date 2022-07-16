@@ -28,7 +28,7 @@
             margin-right: 16px;
         }
 
-        .header__menu-wrapper, .header__cta {
+        .header__menu-wrapper, .header__cta, .floating-whatsapp__button {
             display: none !important;
         }
 
@@ -374,8 +374,11 @@
 
     botaoArea.classList.add("row", "d-none", "d-md-flex")
     menuWrapper.parentNode.appendChild(botaoArea)
-    botaoArea.appendChild(headerCardWhatsappLink)
-    botaoArea.appendChild(divPhone)
+
+    // Oculta área dos botões de whatsapp e telefone
+    //botaoArea.appendChild(headerCardWhatsappLink)
+    //botaoArea.appendChild(divPhone)
+
     header.after(menu)
     menuWrapper.after(headerMobileButtons)
 

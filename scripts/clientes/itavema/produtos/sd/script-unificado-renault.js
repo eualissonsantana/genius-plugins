@@ -662,6 +662,7 @@
     }
 
     removeFormWhatsapp();
+    alterarLinksPoliticaPrivacidade();
     alterarOrdemMenu();
     alterarMenuOfertasParaPosVenda();
     alterarDirecionamentoBotaoAgendamentoRevisao();
@@ -671,7 +672,6 @@
     alterarTextoAltLogoFooter();
     alterarTituloFormularioPaginaRenaultOnDemand();
     adicionaSitemapFooter();
-    alterarLinksPoliticaPrivacidade();
 })();
 
 // 07/07/2022 | Adicionar select de unidades na página customizada Renault Pro Mais

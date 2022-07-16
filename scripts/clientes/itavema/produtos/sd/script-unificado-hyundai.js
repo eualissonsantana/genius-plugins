@@ -457,10 +457,10 @@
     }
 
     removeFormWhatsapp();
+    alterarLinksPoliticaPrivacidade()
     adicionaRedirectPaginaAgradecimento();
     ocultarMenuOfertasUnicas();
     alterarMenuOfertasParaPosVenda();
     alterarDirecionamentoBotaoAgendamentoRevisao();
     adicionaSitemapFooter();
-    alterarLinksPoliticaPrivacidade()
 })();

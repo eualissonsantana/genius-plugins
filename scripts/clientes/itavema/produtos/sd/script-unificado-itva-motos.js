@@ -738,6 +738,7 @@
     }
 
     removeFormWhatsapp();
+    alterarLinksPoliticaPrivacidade();
     alterarTitulosMarcaGenericaParaDafraouKTM();
     adicionarCondicionalMarcasEmDrop();
     ocultarUnidadesSelecionadasFormulario();
@@ -747,5 +748,4 @@
     adicionaRedirectPaginaAgradecimento();
     ocultarMenuOfertasUnicas();
     adicionaSitemapFooter();
-    alterarLinksPoliticaPrivacidade();
 })();

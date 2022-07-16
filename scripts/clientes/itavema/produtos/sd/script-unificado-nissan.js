@@ -463,6 +463,7 @@
         });
     }
     
+    alterarLinksPoliticaPrivacidade();
     alteraRedirecionamentoAgendamentoRevisao()
     adicionaRedirectPaginaAgradecimento()
     ocultaItemOfertasUnicas()
@@ -470,5 +471,4 @@
     alteraOrdemMenu()
     removeFormWhatsapp()
     adicionaSitemapFooter();
-    alterarLinksPoliticaPrivacidade();
 })()

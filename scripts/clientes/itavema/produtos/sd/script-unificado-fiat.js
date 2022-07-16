@@ -481,6 +481,7 @@
     }
 
     removeFormWhatsapp()
+    alterarLinksPoliticaPrivacidade()
     alteraRedirectAgendamentoRevisao()
     adicionaRedirectPaginaAgradecimento()
     ocultaCarrosselOfertasUnicas()
@@ -489,5 +490,4 @@
     alteraOfertasParaNossoEstoque()
     alteraOrdemMenu()
     adicionaSitemapFooter()
-    alterarLinksPoliticaPrivacidade()
 })()

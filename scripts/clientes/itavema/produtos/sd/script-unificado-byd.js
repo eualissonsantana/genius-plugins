@@ -422,8 +422,8 @@
     }
 
     removeFormWhatsapp();
+    alterarLinksPoliticaPrivacidade()
     adicionaRedirectPaginaAgradecimento();
     ocultarMenuAgendeTestDrive();
     adicionaSitemapFooter();
-    alterarLinksPoliticaPrivacidade()
 })();

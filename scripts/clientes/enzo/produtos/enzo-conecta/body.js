@@ -111,7 +111,7 @@
             min-height: 120px;
             background: url("https://legado.autoforce.com.br/plugins/scripts/clientes/enzo/produtos/enzo-conecta/images/background-cadastro.png");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             color: #FFFFFF;
             display: flex;
             align-items: center;
@@ -281,7 +281,8 @@
             
             banner.innerHTML = `
                 <a href="#mapa">
-                    <img src="https://legado.autoforce.com.br/plugins/images/clientes/enzo/produtos/enzo-conecta/banner-enzo-conecta.png" width="100%" alt="Banner da Enzo Conecta com fundo azuls e letras informativas brancas"> 
+                    <img src="https://legado.autoforce.com.br/plugins/scripts/clientes/enzo/produtos/enzo-conecta/images/banner-enzo-conecta.png" width="100%" alt="Banner da Enzo Conecta com fundo azuls e letras informativas brancas"> 
+                    <div class="showcase-consortium__conversion-form"></div>
                 </a>
             `
             menu.after(banner)
@@ -435,6 +436,52 @@
         }
     }
 
+    function makeForm() {
+        cloneId = parseInt(elConversionForm.dataset.cloneId),
+        linkPrivacyPolicy = elConversionForm.dataset.linkPrivacyPolicy,
+        units = elConversionForm.dataset.units,
+        product = elConversionForm.dataset.product,
+        channel = elConversionForm.dataset.channel,
+        category = elConversionForm.dataset.category,
+        brand = elConversionForm.dataset.brand,
+        showCpf = !!JSON.parse(elConversionForm.dataset.showCpf),
+        showUnits = JSON.parse(elConversionForm.dataset.showUnits),
+        PERIOD_DICTIONARY = {
+        'diário': 'dia',
+        'mensal': 'mês',
+        },
+        PERIOD_DICTIONARY_PLURAL = {
+        'diário': 'dias',
+        'mensal': 'mêses',
+        },
+        shouldShowDataPermissions = !!JSON.parse(elConversionForm.dataset.shouldShowDataPermissions),
+        dataPermissionsCustomText = elConversionForm.dataset.dataPermissionsCustomText;
+
+        units = JSON.parse(units);
+
+        /**
+         * Renderiza o componente reativo para o formulário de conversão
+         */
+        render(
+            h(ConsortiumConversionFormApp, {
+            brand: brand,
+            category: category,
+            channel: channel,
+            cloneId: cloneId,
+            linkPrivacyPolicy: linkPrivacyPolicy,
+            mainPhrase:
+                'Preencha o formulário abaixo para receber o contato de um de nossos especialistas:',
+            product: product,
+            units: units,
+            showCpf: showCpf,
+            showUnits: showUnits,
+            shouldShowDataPermissions: shouldShowDataPermissions,
+            dataPermissionsCustomText: dataPermissionsCustomText,
+            }),
+            elConversionForm
+        );
+    }
+
 
     removeItens()
     makeBanner();
@@ -445,6 +492,5 @@
     makeComoFunciona();
     makeAreaCadastro();
     adjustVantagens();
-
-
+    makeForm();
 })()
