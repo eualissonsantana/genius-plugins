@@ -192,14 +192,6 @@
                     data_background_image: "https://legado.autoforce.com.br/assets/images/itavema/volvo.png",
                     href: "http://intercarvocal.com.br",
                     image: "https://legado.autoforce.com.br/assets/images/itavema/volvo.png"
-                },
-                {
-                    name: "BYD",
-                    target: "byd",
-                    alt: "BYD",
-                    data_background_image: "https://legado.autoforce.com.br/assets/images/itavema/byd.png",
-                    href: "https://itavema.com.br/byd",
-                    image: "https://legado.autoforce.com.br/assets/images/itavema/byd.png"
                 }
             ];
     
