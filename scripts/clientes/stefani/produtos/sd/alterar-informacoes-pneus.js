@@ -14,7 +14,8 @@
     }
 
     addStyle`
-        .gallery-with-thumbs, .vehicle-details {
+        .gallery-with-thumbs, .vehicle-details, 
+        .list-vehicles-new__list .card__trigger-description {
             display: none !important;
         }
     `

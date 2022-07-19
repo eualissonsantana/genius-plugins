@@ -2,7 +2,6 @@
     //Direciona para o conteúdo após carregamento página "BYD Cars"
     //Alisson Santana
     function conteudoByd() {
-        console.log("Entrou no primeiro")
         const addStyle = (styles) => {
             const css = styles,
                 head = document.head || document.getElementsByTagName('head')[0],
@@ -33,7 +32,6 @@
     // 12/05/2022 | Adiciona ícone de redes sociais no header 
     // Alisson Santana
     function addIconesRedesSociais() {
-        console.log("Entrou no Segundo")
     
         let phoneButton = document.querySelector(".nav-wrapper-dinamic .wrapper-right #phones-main");
         let socialMidiaWrapper = document.createElement("div");
@@ -555,7 +553,6 @@
         const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A:Z?key=${keyAPI}`)
         const data = await response.json()
         const slugs = data.values
-        console.log(slugs)
         let dataRedirect = []
         let url = {
             origem: '',
@@ -600,9 +597,7 @@
     // 30/06/2022 | Alterar ordenação do menu
     // Alisson Santana
     function alteraOrdenacaoMenu() {
-        console.log("Entrou no último")
         const menuItems = document.querySelectorAll(".menu-geral > li")
-        console.log(menuItems)
         const reorder = (before, after) => after.parentNode.insertBefore(before, after)
          
         const orders = [ { before: menuItems[5], after: menuItems[4] },  { before: menuItems[6], after: menuItems[4] }]
@@ -738,7 +733,8 @@
                 const urlBase = "https://www.itavema.com.br/"
                 const urlPolicy = "/empresa/politica-de-privacidade"
                 const menuItemsSD = document.querySelectorAll(".nav--accordion-mobile .nav-item")
-            
+                const menuItemsPG = document.querySelectorAll(".menu-geral > li")
+                
                 if(linkPolicyFooterPortal ){
                     const newLink = linkPolicyFooterPortal.cloneNode(true)
                     newLink.setAttribute("href", "https://www.itavema.com.br/empresa/politica-de-privacidade")
@@ -755,6 +751,14 @@
             
                 if(menuItemsSD) {
                     menuItemsSD.forEach(element => {
+                        if(element.innerHTML.includes("Política de Privacidade")) {
+                            element.remove()
+                        }
+                    });
+                }
+
+                if(menuItemsPG) {
+                    menuItemsPG.forEach(element => {
                         if(element.innerHTML.includes("Política de Privacidade")) {
                             element.remove()
                         }
@@ -804,11 +808,14 @@
                         linkPolicyFormSD.setAttribute("href", urlBase + "itavema-seminovos" + urlPolicy)
                     } 
                 }
+
+                console.log("Política de Privacidade")
             }
         });
     }
     
     // Chamada das funções
+    alterarLinksPoliticaPrivacidade()
     conteudoByd()
     addIconesRedesSociais()
     ajustaLogosTopo()
@@ -822,5 +829,4 @@
     alteraOrdenacaoMenu()
     adicionarCtaQueroEssaOfertasSeminovosIndex()
     alterarMarcasPorImagem()
-    alterarLinksPoliticaPrivacidade()
 })()

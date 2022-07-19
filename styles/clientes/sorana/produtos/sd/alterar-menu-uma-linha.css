@@ -1,0 +1,13 @@
+.nav-simple__item {
+    padding: 20px 8px !important;
+}
+
+@media (min-width: 1200px) {
+    header.header .container, .nav-simple--accordion-mobile .container {
+        max-width: 1300px !important;
+    }
+
+    .nav-simple ul.nav a {
+        font-size: 14px !important;
+    }
+}
