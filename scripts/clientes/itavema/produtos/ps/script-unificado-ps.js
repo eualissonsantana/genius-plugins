@@ -134,7 +134,7 @@
                         units: []
                     },
                     {
-                        title: "Dafra PeÃ§as de Motos e VeÃ­culos",
+                        title: "Dafra Peças de Motos e Veículos",
                         units: []
                     }
                 ];
