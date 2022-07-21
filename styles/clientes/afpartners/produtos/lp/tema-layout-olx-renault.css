@@ -1,0 +1,310 @@
+/* Root */
+.page,
+.page--category-direct-sale .page__container, .page--direct-sales .page__container, .page--home .page__container, .page--offers .page__container, .page--used-models .page__container, .page__container,
+.vehicle-details,
+.footer-land,
+.new-vehicles-land{
+    background-color: #fff !important;
+}
+
+/* Index */
+.list-vehicles-land__title,
+.card-land__title,
+.card-land__description,
+.card-land__price,
+.showcase__title,
+.showcase__call,
+.showcase__offer,
+.highlight__secondary-phrase,
+.more-about p,
+.land-description__title,
+.land-description,
+.section-component__title--small,
+.detail-tabs__title,
+.text-calls-cta-offer__title,
+.new-vehicles-land__title,
+.form-conversion__footer,
+.cta-box--vertical .cta-box__phrase,
+.showcase__label-variants,
+.showcase__extra-info,
+#especificacoes,
+.choices__item,
+.vehicle-details .list>li,
+.vehicle-details .list>li>span>strong,
+.highlights .highlights__title,
+.olx-footer-copyright .footer-land-copyright a,
+.olx-footer-copyright .footer-land-copyright p,
+.olx-footer-cnpj p,
+.olx-footer-links a,
+.privacy-policy__title,
+.privacy-policy p{
+    color: #6D6E71 !important;
+}
+
+.custom-check>input[type=radio]:checked~.custom-check__check:after, .custom-check input[type=checkbox]:checked~.custom-check__check:after,
+.showcase__breadcrumb-item>a,
+.showcase__breadcrumb-item.active,
+.highlight__title
+{
+    color: #6E0AD6 !important;
+}
+
+.list-vehicles-land .card-land,
+.new-vehicles-land__carousel .card-land,
+.highlights .highlights__items,
+.card-collapse, 
+.card-panel{
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
+    border: 0.063rem solid #d2d2d2;
+    border-radius: 0.2rem;
+}
+
+/* Intern */
+.conversion-form__header-phrase,
+.custom-check--radio>.custom-check__check:after,
+.card-land__description p:before,
+.tabs__link:after{
+    background-color: #6E0AD6 !important;
+}
+
+.conversion-form,
+.form-conversion__body{
+    background-color: #F9F9F9 !important;
+}
+
+.form-control, 
+.form-conversion--static select, 
+.form-conversion--static textarea,
+.conversion-form__control-label,
+.conversion-form .custom-check>label{
+    color: #4a4a4a !important;
+}
+
+.custom-check--light .custom-check__check{
+    color: #D2D2D2 !important;
+}
+
+.showcase-new__chronometer .chronometer-box{
+    color:#4A4A4A !important;
+}
+
+.showcase__legal-text,
+.showcase__hr{
+    border-top: 3px solid #6D6E71 !important;
+}
+
+.highlight__title{
+    font-size: 1.5rem !important;
+}
+
+.highlight__secondary-phrase{
+    font-size: .9rem !important;
+}
+
+.card-collapse, 
+.card-panel{
+    color: #F9F9F9 !important;
+}
+
+.button--dark{
+    background-color: #fff;
+    color: #f28000;
+    border: 0.063rem solid #f28000;
+}
+
+.button--dark:focus, 
+.button--dark:hover{
+    color: #f28000 !important;
+    background-color: #fff !important;
+}
+
+.custom-check--light .custom-check__check{
+    border: 2px solid #6D6E71 !important;
+}
+
+.conversion-form{
+    border: 0.063rem solid #d2d2d2 !important;
+}
+
+.detail-tabs__title{
+    border-bottom: 2px solid #6D6E71 !important;
+}
+
+.form-control, .form-conversion--static select, .form-conversion--static textarea{
+    border-color: #d2d2d2 !important;
+}
+
+.gallery-video__title{
+    margin-top: 1rem !important;
+}
+
+.highlights .highlight{
+    justify-items: flex-start !important;
+    text-align: unset !important;
+    padding: 0 2rem !important;
+}
+
+.highlights .highlight+.highlight{
+    border-left: 1px solid #6D6E71;
+}
+
+.highlights .highlight__secondary-phrase{
+    font-weight: normal !important;
+}
+
+.header__logo-right {
+    margin-top: -25px !important;
+    margin-bottom: -30px !important;
+    max-width: 55px !important;
+}
+
+.olx-brand-divider{
+    display: flex;
+    width: 0.2rem;
+    height: 2.5rem;
+    background-color: #6E0AD6;
+    margin: 0 1.5rem;
+}
+
+.wrapper-brand-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-land{
+    padding: 2rem 0;
+    border-top: 1px solid #d2d2d2;
+}
+
+.footer-land__separator{
+    background: #6D6E71 !important;
+}
+
+.olx-footer-links{
+    padding: 2rem 0;
+}
+
+.olx-footer-copyright,
+.olx-footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.olx-footer-links .links a:hover{
+    color: #6E0AD6 !important;
+    text-decoration: underline !important;
+}
+
+.olx-footer-brand{
+    display: flex;
+    align-items: center
+}
+
+.olx-footer-copyright .footer-land-copyright,
+.olx-footer-cnpj p,
+.olx-footer-links a{
+    font-size: .8rem;
+}
+
+.olx-footer-cnpj .about-olx{
+    display: none;
+}
+
+.olx-footer-links .links a,
+.olx-footer-links .social-media a{
+    padding-right: 2rem !important;
+}
+
+.olx-footer-links .social-media a:last-child{
+    padding-right: 0rem;
+}
+
+.privacy-policy-popup__box{
+    background-color: #4A4A4A !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.privacy-policy-popup__box #privacy-policy-popup-accept{
+    background-color:  #f28000 !important;
+    color: #fff !important;
+}
+
+.privacy-policy-popup__box #privacy-policy-popup-accept:hover{
+    background-color:  #f28000 !important;
+    color: #fff !important;
+}
+
+@media screen and (max-width: 768px){
+    .olx-footer-copyright, 
+    .olx-footer-links{
+        flex-direction: column;
+    }
+
+    .olx-footer-links .links{
+        align-self: flex-start;
+    }
+
+    .olx-footer-cnpj .about-olx,
+    .olx-footer-links .links a{
+        display: block;
+    }
+
+    .olx-footer-links .social-media{
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .olx-footer-links .social-media{
+        padding: 2rem 0 1rem 0;
+    }
+
+    .olx-footer-links .links a{
+        padding: .5rem 0;
+    }
+
+    .olx-footer-links .social-media a,
+    .header-mobile__buttons{
+        padding-right: 0rem !important;
+    }
+
+    .olx-footer-copyright .footer-land-copyright-img{
+        order: 0;
+        padding-bottom: 1rem;
+    }
+
+    .olx-footer-copyright .footer-land-copyright{
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-land .button-scroll-top{
+        top: -15px !important;
+        z-index: 1 !important;
+    }
+
+    .highlights .highlight{
+        padding: 2rem 1rem !important; 
+    }
+
+    .header-mobile__logo{
+        flex-basis: auto !important;
+    }
+
+    .header-mobile__logo>img{
+        max-height: 45px !important;
+    }
+
+    .header-mobile__logo-right {
+        max-width: 55px !important;
+    }
+
+    .olx-brand-divider{
+        margin: 0 2.1rem 0 1rem;
+    }
+}

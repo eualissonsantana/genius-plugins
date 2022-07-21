@@ -33,30 +33,10 @@
         dropdownWhatsapp.setAttribute("style", "position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);");
         dropdownWhatsapp.innerHTML = `
             <span>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=5571984302642&text=Quero%20saber%20mais%20sobre%20a%20Flua!" target="_blank">
+                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=551733541301" target="_blank">
                     <i class="icon icon-whatsapp"></i>
-                    <span class="titulo">Jeep Rio Vermelho</span>
-                    <strong class="text-nowrap text-mask-phone">(71) 98430-2642</strong>
-                </a>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=5571981553212&text=Quero%20saber%20mais%20sobre%20a%20Flua!" target="_blank">
-                    <i class="icon icon-whatsapp"></i>
-                    <span class="titulo">Jeep ACM</span>
-                    <strong class="text-nowrap text-mask-phone">(71) 98155-3212</strong>
-                </a>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=5581991461062&text=Quero%20saber%20mais%20sobre%20a%20Flua!" target="_blank">
-                    <i class="icon icon-whatsapp"></i>
-                    <span class="titulo">Jeep Piedade</span>
-                    <strong class="text-nowrap text-mask-phone">(81) 99146-1062</strong>
-                </a>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=5581991148728&text=Quero%20saber%20mais%20sobre%20a%20Flua!" target="_blank">
-                    <i class="icon icon-whatsapp"></i>
-                    <span class="titulo">Jeep Imbiribeira</span>
-                    <strong class="text-nowrap text-mask-phone">(81) 99114-8728</strong>
-                </a>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=5585992125194&text=Quero%20saber%20mais%20sobre%20a%20Flua!" target="_blank">
-                    <i class="icon icon-whatsapp"></i>
-                    <span class="titulo">Jeep Dunas</span>
-                    <strong class="text-nowrap text-mask-phone">(85) 99212-5194</strong>
+                    <span class="titulo">Atendimento</span>
+                    <strong class="text-nowrap text-mask-phone">(17) 3354-1301</strong>
                 </a>
             </span>
         `;
