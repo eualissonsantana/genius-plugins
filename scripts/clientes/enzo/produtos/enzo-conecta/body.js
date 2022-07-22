@@ -17,7 +17,10 @@
         .institutional-area__content-btn, 
         .institutional-area__media-image,
         .listing-highlights-consorcio,
-        .listing-highlights-consorcio__ctas {
+        .listing-highlights-consorcio__ctas,
+        .header__search-mobile-form-btn,
+        .header__menu-wrapper, .header__search-mobile,
+        .consent-text {
             display: none !important;
         }
 
@@ -42,7 +45,7 @@
         .card-vehicle {
             font-size: 16px;
             padding: 24px;
-            height: 100%;
+            height: 105%;
         }
 
         .card-vehicle .card-title, .texto-destaque {
@@ -64,6 +67,7 @@
             border: 2px solid hsl(var(--primary-hue),var(--primary-sat),var(--primary-light));
             border-radius: 8px;
             font-weight: 700;
+            margin-bottom: 0;
         }
 
         .institutional-area__content-title {
@@ -81,6 +85,14 @@
             column-gap: initial !important;
         }
 
+        .swiper-pagination-bullet {
+            border-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light)) !important;
+        }
+
+        .slide-vantagens__slide-pagination .swiper-pagination-bullet-active {
+            background-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light)) !important;
+        }
+
         #banner {
             min-height: 550px;
             width: 100%;
@@ -88,6 +100,7 @@
             background-repeat: no-repeat !important;
             background-position-y: bottom !important;
             background-size: cover !important;
+            cursor: pointer;
         }
 
         .institutional-area {
@@ -167,7 +180,7 @@
             position: fixed;
             background-color: #0554F2;
             color: #FFF;
-            z-index: 1;
+            z-index: 999;
             width: 100%;
             height: 100%;
         }
@@ -230,8 +243,8 @@
         }
 
         .conversion-form__header-phrase h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
+            font-size: 1.5rem !important;
+            margin-bottom: 0 !important;
         }
 
         .conversion-form__header-phrase p {
@@ -248,8 +261,6 @@
             max-width: 400px;
         }
 
-       
-        
         .conversion-form__photo {
             text-align: center;
             height: 100px;
@@ -376,9 +387,63 @@
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
         }
 
+        #mapa {
+            background: #fff;
+            padding: 40px 0 48px;
+        }
+
+        .map-units .control-label {
+            font-weight: bold;
+        }
+
+        .map-units__cta .btn {
+            background: hsl(var(--primary-hue),var(--primary-sat),var(--primary-light)) !important;
+        }
+
+        .choices[data-type*=select-one] .choices__inner {
+            border-color: hsl(var(--primary-hue),var(--primary-sat),var(--primary-light)) !important;
+        }
+
+        .choices__item {
+            font-weight: 300 !important;
+            text-transform: capitalize !important;
+            font-size: 16px !important;
+        }
+
+        .choices__list--single {
+            padding: 0 0 0.75rem 0.75rem;
+        }
+
+        .form-group .location-fields {
+                grid-template-columns: 35fr 65fr;
+        }
+
+        .form-message-overlay--active {
+            opacity: 1 !important;
+            z-index: 100 !important;
+        }
+
+        @media (min-width: 992px) {
+            .map-units__form {
+                -webkit-box-flex: 1.8;
+                -ms-flex: 1.8;
+                flex: 1.8;
+                padding: 24px 16px !important;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+                border-radius: 8px;
+                margin-right: 30px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .slide-vantagens {
+                margin-bottom: 0 !important;
+            }
+        }
+
         @media (max-width: 768px) {
             #banner {
-                min-height: 200px;
+                min-height: 420px;
                 background: url('https://legado.autoforce.com.br/plugins/scripts/clientes/enzo/produtos/enzo-conecta/images/banner-enzo-conecta-mobile.png');
                 background-size: cover;
             }
@@ -410,34 +475,126 @@
                 background: #fff;
                 padding-bottom: 60px;
             }
-                
+
+            .slide-vantagens__controls {
+                position: initial !important;
+            }
+
+            .owl-item {
+                max-width: 280px !important;
+            }
+
+            .site-section__header-title {
+                font-size: 1.5rem !important;
+                line-height: 1.1 !important;
+            }
+        }
+
+        @media screen and (max-width: 991.98px) {
+            .map-units__form {
+                display: block !important;
+                padding: 15px;
+            }
+        
+            .map-units {
+                flex-direction: column;
+            }
         }
 
         @media (min-width: 1200px) {
             #banner > .container {
                 max-width: 1350px;
             }
+
+            #form > .container {
+                max-width: 1250px;
+            }
             
-            .form-conversion--static {
-                margin-top: -500px;
+            .static-conversion-form {
+                margin-top: -540px;
             }
 
             .form-conversion__body .btn {
                 padding: 16px 60px;
                 position: absolute;
                 width: initial !important;
-                margin-left: 18px;
+                margin-left: 30px;
                 bottom: -30px;
             }
         }
        
     `
-    function makeQuestion() {
-        
-    }
+
+    const vehiclesStaticData = [
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/7295/model_thumb_comprar-serie-s_866021c83d.png",
+            vehicleName: "Compass 4XE",
+            vehicleBrand: "Jeep",
+            economy: "0,42 / km",
+            co2: "-21.200 kg / ano",
+            link: "https://enzojeep.com.br/novos/novo-compass-4xe-2022",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/7155/model_thumb_comprar-twin-pure-electric_d900e12e6d.png",
+            vehicleName: "C40 Recharge",
+            vehicleBrand: "Volvo",
+            economy: "0,63 / km",
+            co2: "-27.800 kg / ano",
+            link: "https://enzovolvo.com.br/novos/c40-recharge-2022",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/7909/model_thumb_comprar-bhev_8a013c9755.png",
+            vehicleName: "XC40 Recharge",
+            vehicleBrand: "Volvo",
+            economy: "0,60 / km",
+            co2: "-28.300 kg / ano",
+            link: "https://enzovolvo.com.br/novos/xc40-recharge-pure-electric",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/6543/model_thumb_comprar-icon_e203aeac0c.png",
+            vehicleName: "500e",
+            vehicleBrand: "Fiat",
+            economy: "0,43 / km",
+            co2: "-18.200 kg / ano",
+            link: "https://fiatenzo.com.br/novos/500e-2022",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/6193/model_thumb_comprar-intense_340e8cec27.png",
+            vehicleName: "Zoe e-Tech",
+            vehicleBrand: "Renault",
+            economy: "0,38 / km",
+            co2: "-19.700 kg / ano",
+            link: "https://guararenault.com.br/novos/zoe-e-tech-2022",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/7464/model_thumb_comprar-intense_3d604105ae.png",
+            vehicleName: "Kwid e-Tech",
+            vehicleBrand: "Renault",
+            economy: "0,40 / km",
+            co2: "-17.700 kg / ano",
+            link: "https://guararenault.com.br/novos/novo-kwid-e-tech-2023",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/7940/model_thumb_comprar-premier_27353dae28.png",
+            vehicleName: "BOLT EUV",
+            vehicleBrand: "Chevrolet",
+            economy: "0,52 / km",
+            co2: "-15.000 kg / ano",
+            link: "https://nacaochevrolet.com.br/novos/bolt-euv",
+        },
+        {
+            imgLink: "https://production.autoforce.com/uploads/version/profile_image/6553/model_thumb_comprar-ev_5e9434f5a0.png",
+            vehicleName: "BOLT EV",
+            vehicleBrand: "Chevrolet",
+            economy: "0,52 / km",
+            co2: "-17.500 kg / ano",
+            link: "https://nacaochevrolet.com.br/novos/bolt-euv",
+        }
+    ]
+
+    const channelId = 1968
 
     function makeVehiclesArea() {
-
         let vehiclesData = [];
         let vehiclesDataJson;
     
@@ -447,14 +604,12 @@
                 'Content-Type': 'application/json'
             }
         
-            fetch(`https://api.autoforce.com.br/v1/channel/${channelId}/clones`, {
+            fetch(`https://api.autoforce.com.br/v1/channel/${channelId}/consortium`, {
                 headers: headers
             })
             .then(response => response.json())
             .then(data => callback(data));
         };
-        
-        const channelId = "1782"
     
         const mountVehiclesData = (data) => {
             let vehicles = data.entries;
@@ -474,11 +629,14 @@
                     }
                 }
             });
+            console.log(vehiclesData)
         };
+
     
-        const buildSelectNewVehicles = (vehiclesData) => {
-            const defaultElement = ({ imgLink, vehicleName, vehicleBrand }) => {
+        const buildSelectNewVehicles = (vehiclesStaticData) => {
+            const defaultElement = ({ imgLink, vehicleName, vehicleBrand, economy, co2, link }) => {
                 return `
+                <div class="item">
                     <div class="card-vehicle text-center">
                         <div class="card__header">
                             <img class="swiper-lazy" src="${imgLink}" alt="Miniatura do ${vehicleName}">
@@ -489,20 +647,22 @@
                         </div>
                         <hr>
                         <div class="card__footer">
-                            <div class="card__economy">Economia: <span class="texto-destaque"><strong> R$0,42 / km</strong></span></div>
-                            <div class="card__co2">CO²: <span class="texto-destaque"><strong> -21.200 kg / ano</strong></span></div>
+                            <div class="card__economy">Economia: <span class="texto-destaque"><strong> R$${economy}</strong></span></div>
+                            <div class="card__co2">CO²: <span class="texto-destaque"><strong> ${co2}</strong></span></div>
                             <div>
-                                <a href="#" class="btn button button--inverse card__cta"> SAIBA MAIS</a>
+                                <a href="${link}" target="_blank" class="btn button button--inverse card__cta"> SAIBA MAIS</a>
                             </div>
                         </div>
                     </div>
+                </div>
                 `
             }
     
             const vehicles = document.createElement("div")
+            const vehiclesMobile = document.createElement("div")
             vehicles.classList.add("row")
         
-            vehiclesData.forEach(vehicle => {
+            vehiclesStaticData.forEach(vehicle => {
                 const cardItem = document.createElement('div')
                 cardItem.classList.add('col-3', 'mb-5')
     
@@ -510,34 +670,72 @@
         
                 vehicles.appendChild(cardItem)
             })
-    
+
+            vehiclesStaticData.forEach(vehicle => {
+                const cardItem = document.createElement('div')    
+                cardItem.innerHTML = defaultElement(vehicle)
+        
+                vehiclesMobile.appendChild(cardItem)
+            })
+
             // NOSSOS VEÍCULOS
             const veiculos = document.createElement("section")
             veiculos.setAttribute("id", "veiculos")
-            veiculos.setAttribute("class", "container d-none d-md-block")
     
             veiculos.innerHTML = `
-                <h2 class="site-section__header-title">Nossos Veículos</h2>
-                <div class="container">
-                    <div class="row">
-                        ${vehicles.innerHTML}
+                <div class="container d-none d-md-block">
+                    <h2 class="site-section__header-title">Nossos Veículos</h2>
+                    <div class="container">
+                        <div class="row">
+                            ${vehicles.innerHTML}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-md-none container">
+                    <h2 class="site-section__header-title">Nossos Veículos</h2>
+                    <div class="owl-carousel owl-theme">
+                        ${vehiclesMobile.innerHTML}
                     </div>
                 </div>
             
-            `
-            const banner = document.querySelector("#banner")
-            banner.after(veiculos)
+            `  
+
+            setTimeout(() => {
+                $('.owl-carousel').owlCarousel({
+                    center: true,
+                    items:2,
+                    loop:true,
+                    margin:16,
+                    responsive:{
+                        0:{
+                            items:1.3
+                        },
+                        400:{
+                            items: 1.35
+                        },
+                    }
+                })
+            }, 200);
+
+
+
+            const highlights = document.querySelector(".listing-highlights-consorcio")
+            highlights.before(veiculos)
     
         };
         
+        buildSelectNewVehicles(vehiclesStaticData);
+
+        /*
         requestNewCars(channelId, (data) => {
             vehiclesData = [];
             
             vehiclesDataJson = data;
-    
-            mountVehiclesData(vehiclesDataJson);
-            buildSelectNewVehicles(vehiclesData);
+            mountVehiclesData(data)
+
         });
+        */
+        
     }
 
     function makeBanner() {
@@ -571,12 +769,13 @@
 
 
             banner.setAttribute("id", "banner")
+            banner.setAttribute("onclick", "redirectMapArea()")
             form.setAttribute("id", "form")
             
             form.innerHTML = `
                 <div class="container">
                     <div class="row justify-content-end">
-                        <div class="col-12 col-md-5 d-flex justify-content-end">
+                        <div class="col-12 col-md-4 d-flex justify-content-end">
                             <div class="static-conversion-form"
                                 data-props='${dataPropsJSON}'
                             ></div>
@@ -590,27 +789,83 @@
     }
 
     function makeMap() {
-         // MAPA
-         const veiculos = document.querySelector("#veiculos")
+        // function
+        const highlights = document.querySelector(".listing-highlights-consorcio")
     
-         if(veiculos) {
+        if(highlights) {
             const mapa = document.createElement("section")
             mapa.setAttribute("id", "mapa")
-            mapa.setAttribute("class", "container")
     
             mapa.innerHTML = `
-                <h2 class="site-section__header-title">Encontre agora o Ponto de Carregamento mais perto de você.</h2>
-            
+            <div class="container">
+                <div class="fragment-map-units">
+                    <div class="container">
+                        <h2 class="site-section__header-title">Encontre agora o Ponto de Carregamento mais perto de você.</h2>
+                        <div class="fragment-map-units__render"></div>
+                    </div>
+                </div>
+            </div>
             `
-            veiculos.after(mapa)
-         }
+            
+            highlights.before(mapa)
+        }
+           
+        const requestUnits = (channelId, callback) => {
+            const headers = {
+                'Authorization': `Token token=b80580096caa488b926d93145fed2f44`,
+                'Content-Type': 'application/json'
+            }
+        
+            fetch(`https://api.autoforce.com.br/v1/channel/${channelId}/units`, {
+                headers: headers
+            })
+            .then(response => response.json())
+            .then(data => callback(data));
+        };
+        
+        requestUnits(channelId, (data) => {
+
+            const elMapUnits = document.querySelector('.fragment-map-units__render')
+            render(h(MapUnitsSimpleApp, {
+                units: data.entries,
+                title: "Preencha os filtros abaixo e encontre um ponto de carregamento mais próximo de você.",
+                buttonLabel: "Buscar",
+            }), elMapUnits)
+        });
+
+        setTimeout(() => {
+        console.log("Mutation Observer")
+            const map = document.querySelector(".map-units__form")
+            const campoBairro = document.querySelector(".map-units__form .form-group:nth-child(4)")
+            
+            changeLabel()
+
+            const observer = new MutationObserver(function(){
+                if(campoBairro.innerHTML.includes("loja")) {
+                    changeLabel()
+                }
+            });
+            
+            if(map) {
+                // Setando as alterações que o observer deve assistir
+                observer.observe(map, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        }, 1500);
     }
 
     function adjustPelasArvores() {
         const areaMedia = document.querySelector(".institutional-area__media")
-        
+        const institutionalArea = document.querySelector(".institutional-area")
+
         if(areaMedia) {
             areaMedia.remove()
+        }
+
+        if(institutionalArea) {
+            institutionalArea.setAttribute("id", "pelo-planeta")
         }
     }
 
@@ -693,10 +948,12 @@
                         </p>
                     </div>
                     <div class="col-8 col-md-3">
-                        <a href="#" class="btn button btn-vazado">Cadastre-se</a>
+                        <a href="#" onclick="modalCadastro()" class=" btn button btn-vazado">Cadastre-se</a>
+                        <div class="new-vehicles-dropdown__conversion-form-modal"></div>
                     </div>
                 </div>
             `
+
             comoFunciona.after(cadastro)
         }
     }
@@ -739,6 +996,13 @@
             '.static-conversion-form'
         )
 
+        const customFields = [
+            {
+                name: "tem_veiculo_eletrico",
+                value: getCookie("tem_veiculo_eletrico"),
+            }
+        ]
+
         const dataprops = {
             bait:"Carregue seu veículo!",
             titleForm:"Carregue seu veículo",
@@ -756,7 +1020,8 @@
             contactsWithDynamicRequired:true,
             shouldShowDataPermissions:false,
             dataPermissionsCustomText:"Autorizo o uso de minhas informações pessoais para campanhas de marketing.",
-            showLocationFields:true
+            showLocationFields:true,
+            customFields,
         }
 
         render(h(StaticConversionFormApp, dataprops), formComponentContainer);
@@ -793,7 +1058,7 @@
     makePopup();
     removeItens()
     makeBanner();
-    //makeVehiclesArea();
+    makeVehiclesArea();
     makeMap();
     adjustPelasArvores();
     changeOrder();
@@ -834,4 +1099,70 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function modalCadastro() {
+    event.preventDefault()
+
+    const units = [];
+    const channel = "Enzo Conecta";
+    const category = "Novos";
+    const brand = "Enzo Conecta";
+    const showUnits = false;
+    const showCpf = false;
+    const contactsWithDynamicRequired = false;
+    const shouldShowDataPermissions = false;
+    const dataPermissionsCustomText = "";
+    const showLocationFields = true;
+    const linkPrivacyPolicy = "";
+    const product = "Enzo Conecta"
+    const cloneId = ""
+
+    const formModal = document.querySelector(
+        '.new-vehicles-dropdown__conversion-form-modal'
+    );
+    if (!formModal) return;
+
+    render(
+        h(window.ConversionFormModal, {
+            modalId: 'new-conversion-dropdown-form-modal',
+            open: true,
+            units,
+            product,
+            cloneId,
+            channel,
+            category,
+            brand,
+            showUnits,
+            showCpf,
+            contactsWithDynamicRequired,
+            shouldShowDataPermissions,
+            dataPermissionsCustomText,
+            showLocationFields,
+            linkPrivacyPolicy,
+            titleForm: 'Cadastre-se',
+            mainPhrase: 'Contribua com o planeta. Cadastre-se agora e receba as melhores propostas de veículos:',
+            privacyPolicyStyle: 'check',
+        }),
+        formModal
+        );
+}
+
+function changeLabel() {
+    const campoBairro = document.querySelector(".map-units__form .form-group:nth-child(4)")
+
+    if(campoBairro) {
+        if(campoBairro.innerHTML.includes("Loja")) {
+            const label = campoBairro.querySelector(".control-label")
+            label.innerHTML = label.innerHTML.replace("Loja", "Bairro")
+            
+            const placeholder = campoBairro.querySelector(".choices__list .choices__item")
+            placeholder.innerText = "Escolha o bairro"
+            
+        } 
+    }
+}
+
+function redirectMapArea() {
+    window.location.href = "#mapa"
 }

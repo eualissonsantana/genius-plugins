@@ -243,7 +243,7 @@
                     </a>
                 </li>
                 <li class="nav-item nav-simple__item">
-                    <a href="#pontos" class="nav-link nav-simple__link">
+                    <a href="#mapa" class="nav-link nav-simple__link">
                         Ponto de recarga
                     </a>
                 </li>
@@ -258,7 +258,7 @@
                     </a>
                 </li>
                 <li class="nav-item nav-simple__item">
-                    <a href="#conteudos" class="nav-link nav-simple__link">
+                    <a href="#vantagens" class="nav-link nav-simple__link">
                         Conteúdos
                     </a>
                 </li>
@@ -380,6 +380,6 @@
     //botaoArea.appendChild(divPhone)
 
     header.after(menu)
-    menuWrapper.after(headerMobileButtons)
+    //menuWrapper.after(headerMobileButtons)
 
 })()
